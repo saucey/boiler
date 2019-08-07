@@ -1,7 +1,7 @@
 import { IEndPointKeys } from '../models';
 
 const endPoints: IEndPointKeys = {
-    base: 'https://EcpWebApplicationsApi.azurewebsites.net/api',
+    base: 'https://staging-api.eurocarparks.com/backoffice/api',
     baseWebSocket: 'wss://localhost:44370/',
     baseSignalRHubs: 'https://localhost:44370' ,
     goCardlessKey: 'TbmJx946zYNa_7GKowKDnBVuzY3L7JuBylRtFgzr',
