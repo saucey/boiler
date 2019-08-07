@@ -34,7 +34,6 @@ export class PurchaseConfirmation extends React.Component<IPurchaseConfirmationP
     }
 
     render() {
-
         const { /*purchase,*/ permit } = this.props;
 
         let formattedStartDate: string;
@@ -51,6 +50,8 @@ export class PurchaseConfirmation extends React.Component<IPurchaseConfirmationP
             const formattedPrice: number = productFrequencyName === "Monthly" ? priceUntilStartofNextMonth : priceForAllSpaces;
             grandTotal = Math.round((deposit + formattedPrice) * 100) / 100;
         } else {
+            formattedStartDate = Moment(permit.startDate).format('DD/MM/YYYY');
+            formattedEndDate = dateTimeHelper.getEndDateForPeriodAsDate(Moment(permit.startDate).toDate(), permit.productFrequency.productFrequencyName);
             grandTotal = Math.round(this.props.permit.initialPayment * 100) / 100;
         }
 
