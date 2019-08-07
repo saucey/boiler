@@ -6,16 +6,14 @@ pool:
 steps:
 - script: npm install
   displayName: 'npm install'
-  workingDirectory: robertgordon
 
 - script: yarn build-staging
   displayName: 'yarn build'
-  workingDirectory: robertgordon
 
 - task: ArchiveFiles@2
   displayName: 'Archive files'
   inputs:
-    rootFolderOrFile: robertgordon/build
+    rootFolderOrFile: build
     includeRootFolder: false
 
 - task: PublishBuildArtifacts@1
