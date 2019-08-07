@@ -243,7 +243,7 @@ export class PermitManagement extends React.Component<IPermitManagementProps> {
     render() {
         const permit = this.state['permit'];
         return (
-            <AppContainer title='Dashboard' isPurchase={false} renderFooter={() => { return true && <span></span> }} render={() => {
+            <AppContainer title='Dashboard' isLogOut={false} isManagement={true} isPurchase={false} renderFooter={() => { return true && <span></span> }} render={() => {
                 //if (isProcessing && customer === undefined) { return <AppLoading/>};
                 return (
                     <div>

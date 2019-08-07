@@ -79,6 +79,8 @@ export const Management = withStyles(styles)(class Management extends React.Comp
             guid: setStepNumber(props.location.pathname) === 2 ? new URLSearchParams(props.location.search).get('token') : '',
             purchase: this.props.location.state ? this.props.location.state.purchase : new Purchase(null, null)
         }
+
+        console.log(this.props.location, 'the location!!!')
     }
 
     componentDidUpdate(prevProps: IManagementProps, prevState: IManagementState) {
@@ -115,7 +117,7 @@ export const Management = withStyles(styles)(class Management extends React.Comp
         // const { permits } = this.props;
         //const {customer, isProcessing, clients, regions, countries, fetchCustomer, onSave, resetSuccess, onCancel, isSaved } = this.props;
         return (
-            <AppContainer title='Reset Password' isPurchase={false} renderFooter={() => { return true && <span></span> }} render={() => {
+            <AppContainer title='Reset Password' isPurchase={false} isLogOut={false} isManagement={true} renderFooter={() => { return true && <span></span> }} render={() => {
                 return (
                     <div>
                         {this.state['step'] === 0 && <Permits permits={this.props.permits} permitEdit={this.permitEdit} />}

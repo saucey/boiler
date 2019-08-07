@@ -404,6 +404,12 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         })
     }
 
+    dashboard() {
+        this.props.history.push({
+            pathname: "/"
+        })
+    }
+
     render() {
         const { products, isProcessing, towns, sites, productFrequencies, product, permit, town } = this.props;
         const { step, isDesktop, purchase } = this.state;3
@@ -411,7 +417,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         const userCustomer = this.props.user.customer !== null ? this.props.user['user'].customer : null
 
         return (
-            <AppContainer title='Purchase Permit' isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}
+            <AppContainer title='Purchase Permit' isLogOut={false} isManagement={false}  isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}
                 render={() => {
                     return <Flipper flipKey={step === 1 || step === 2}><HomeWrapper>
                         {step === 0 && <React.Fragment>
@@ -490,7 +496,10 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
                             <h1 className="heading">{this.heading('Confirmation')}</h1>
                             {isProcessing && <LoadSpinner />}
                             <PurchaseConfirmation pendingCardPayment={this.props.pendingCardPayment} payingDeposit={this.state.payingDeposit} purchase={purchase} permit={permit} />
-                            <BkToIntroBtn onClick={() => this.startIntro()}>intro</BkToIntroBtn>
+                            { this.props.preProduct ? 
+                                <BkToIntroBtn onClick={() => this.dashboard()}>Manage Permits</BkToIntroBtn> : 
+                                <BkToIntroBtn onClick={() => this.startIntro()}>intro</BkToIntroBtn>
+                            }
                         </React.Fragment>}
                         {step === 12 && <React.Fragment>
                             <h1 className="heading">{this.heading('Register')}</h1>

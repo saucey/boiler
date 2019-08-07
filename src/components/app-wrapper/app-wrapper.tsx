@@ -12,6 +12,8 @@ export interface IAppContainerProps {
   isOpen: boolean;
   footerHeight: number;
   isPurchase: boolean;
+  isManagement: boolean;
+  isLogOut: boolean;
   onToggleSideMenu(boolean): void;
   render(): JSX.Element;
   renderFooter(): JSX.Element;
@@ -30,11 +32,11 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
   }
 
   render() {
-    const { title, render, isHome, isPurchase, renderFooter, onHomeClick } = this.props;
+    const { title, render, isHome, isPurchase, renderFooter, onHomeClick, isManagement, isLogOut } = this.props;
     const isReady = this.props.isReady;
     return (
       <React.Fragment>
-        {isReady ? this.renderApp({ title, isReady, isHome, isPurchase, render, renderFooter, onHomeClick }) : <LoadSpinner />}
+        {isReady ? this.renderApp({ title, isReady, isHome, isPurchase, isManagement, isLogOut,  render, renderFooter, onHomeClick }) : <LoadSpinner />}
       </React.Fragment>
     );
   };
@@ -59,11 +61,13 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
     this.props.onToggleSideMenu(false);
   };
 
-  renderApp = ({ title, isReady, isHome, isPurchase, render, renderFooter, onHomeClick }: {
+  renderApp = ({ title, isReady, isHome, isPurchase, isManagement, isLogOut, render, renderFooter, onHomeClick }: {
     title: string,
     isReady: boolean,
     isHome?: boolean,
     isPurchase: boolean,
+    isManagement: boolean,
+    isLogOut: boolean,
     render(): JSX.Element,
     renderFooter(): JSX.Element,
     onHomeClick(): void
@@ -73,7 +77,17 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
         <div className='bg-robert-gordon' style={{ paddingBottom: this.props.footerHeight }}>
           <div>
             {/* <button>CANCEL</button> */}
-            <div className="cancel-btn-wrapper">{isPurchase && <Link to="/">CANCEL</Link>}</div>
+            <div className="cancel-btn-wrapper">
+              {
+                isManagement && <Link to="/">MANAGEMENT</Link>
+              }
+              {
+                isLogOut && <Link to="/">LOGOUT</Link>
+              }
+              {
+                isPurchase && <Link to="/">CANCEL</Link>
+              }
+            </div>
             <div className="logo-btn-wrapper"><img className="logo" width="100px" src={getLogo()} /></div>
           </div>
           <div>
