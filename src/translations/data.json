@@ -1,0 +1,28 @@
+{
+    "en": {
+            "app.title": "Euro Car Parks",
+            "app.intro": "Purchase and manage your parking permits",
+            "Permit": "Permit",
+            "New Permit": "New Permit",
+            "Permits": "Permits",
+            "Product": "Product",
+            "New Product": "New Product",
+            "Products": "Products",
+            "Customer": "Customer",
+            "New Customer": "New Customer",
+            "Customers": "Customers"
+    },
+    "cy": {
+        "app.title": "Euro Car Parks Welsh",
+        "app.intro": "Cymdgygd hisdjis wysdhjs",
+        "Permit": "Permit Welsh",
+        "New Permit": "New Permit Welsh",
+        "Permits": "Permits Welsh",
+        "Product": "Product Welsh",
+        "New Product": "New Product Welsh",
+        "Products": "Products Welsh",
+        "Customer": "Customer Welsh",
+        "New Customer": "New Customer Welsh",
+        "Customers": "Customers Welsh"
+    }
+  }

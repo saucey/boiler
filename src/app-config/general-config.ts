@@ -1,0 +1,1 @@
+export const googleApiKey = "AIzaSyAW_QMAhBsIMC9SHs1iglUzXm6MwZO0O44"

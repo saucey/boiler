@@ -1,0 +1,6 @@
+.selectedsite-appear {  opacity: 0.01; transform: scale(0.9) translateY(-50%);  transition: all 300ms ease-out;}
+.selectedsite-appear-done {  opacity: 1;  transform: scale(1) translateY(0%);}
+.selectedsite-enter {  opacity: 0.01; transform: scale(0.9) translateY(-50%);  transition: all 300ms ease-out;}
+.selectedsite-enter-done {  opacity: 1;  transform: scale(1) translateY(0%);}
+.selectedsite-exit {  opacity: 1;  transform: scale(1) translateY(0%);  transition: all 300ms ease-out;}
+.selectedsite-exit-done {  opacity: 0.01;  transform: scale(0.9) translateY(-50%);}

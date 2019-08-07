@@ -1,0 +1,220 @@
+/* 
+html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,b, u, i, center,
+dl, dt, dd, ol, ul, li,fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {	margin: 0;	padding: 0;	border: 0;	font-size: 100%; vertical-align: baseline;
+    font-family: 'Panton Narrow W00 Regular'; 	 */
+    /* font-family: 'Open Sans'; 	 */
+/* } */
+/* HTML5 display-role reset for older browsers */
+/* article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {	display: block;}
+body {	line-height: 1;}
+ol, ul {	list-style: none;}
+blockquote, q {	quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {	content: '';	content: none;}
+table {	border-collapse: collapse;	border-spacing: 0;} */
+
+/* html {font-size: 13}; */
+/* html { font-family: 'Neo Sans Pro Regular'; } */
+/* body { margin: 0; padding: 0; min-width: 375;  font-size:13; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;} */
+/* code { font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;} */
+
+/* .text-box{  width:100%; height:30px; }
+.select { font-family: 'Open Sans'; font-size:13; }
+.input  { font-family: 'Open Sans'; font-size:13; }
+.right { text-align: right } */
+
+/* custom scrollbar */
+  /* ::-webkit-scrollbar {  width: 17px;}
+  ::-webkit-scrollbar-track {  background: #f1f1f1;  }
+  ::-webkit-scrollbar-thumb {  background: #888; }
+  ::-webkit-scrollbar-thumb:hover {  background: #555; } */
+
+/* @font-face{
+    font-family:"Panton W01 ExtraLight";
+    src:url("fonts/1519102/26a1d41b-0124-47fe-ade7-bd155cc0eb37.eot?#iefix");
+    src:url("fonts/1519102/26a1d41b-0124-47fe-ade7-bd155cc0eb37.eot?#iefix") format("eot"),url("fonts/1519102/ae10dde8-7ab3-4f74-a9d0-2cab1c517ba7.woff2") format("woff2"),url("fonts/1519102/7c3cf3be-ec07-4d0a-a215-e943634012c7.woff") format("woff"),url("fonts/1519102/2f625010-0945-467a-90d4-a39d1c33b9ba.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 ExtraLight Italic";
+    src:url("fonts/1519106/8692ff1d-e7a4-4b34-a02f-3d7e8f7f61e0.eot?#iefix");
+    src:url("fonts/1519106/8692ff1d-e7a4-4b34-a02f-3d7e8f7f61e0.eot?#iefix") format("eot"),url("fonts/1519106/bc4c15f1-a9fa-44e5-ab94-35025e112a60.woff2") format("woff2"),url("fonts/1519106/8c79c305-5c69-4f29-ab95-0895f4987877.woff") format("woff"),url("fonts/1519106/9b236e43-e480-4336-9b2d-1a05a58963b6.ttf") format("truetype");
+} */
+@font-face{
+    font-family:"Panton W01 Light";
+    font-display: swap;
+    src:url("fonts/1519110/cde006b9-b572-4eb1-a24e-dbae3e187756.eot?#iefix");
+    src:url("fonts/1519110/cde006b9-b572-4eb1-a24e-dbae3e187756.eot?#iefix") format("eot"),url("fonts/1519110/ce71b25d-7dec-4db1-8487-806205a046d5.woff2") format("woff2"),url("fonts/1519110/86377c61-f730-4059-8764-41ea8a511df9.woff") format("woff"),url("fonts/1519110/20ff19f0-09d2-4dd7-92a5-94a0522a1c77.ttf") format("truetype");
+}
+
+@font-face {
+    font-family:"UKNumberPlate";
+    font-display: swap;
+    src:url("fonts/UKNumberPlate.eot?#iefix");
+    src:url("fonts/UKNumberPlate.eot?#iefix") format("eot"),url("fonts/UKNumberPlate.woff2") format("woff2"),url("fonts/UKNumberPlate.woff") format("woff"),url("fonts/UKNumberPlate.ttf") format("truetype");
+}
+/* @font-face{
+    font-family:"Panton W01 Light Italic";
+    src:url("fonts/1519114/8bec9d0b-e619-487e-94ab-3aae67639970.eot?#iefix");
+    src:url("fonts/1519114/8bec9d0b-e619-487e-94ab-3aae67639970.eot?#iefix") format("eot"),url("fonts/1519114/61927a52-7abf-42ca-aa15-7dab96c2066e.woff2") format("woff2"),url("fonts/1519114/5ea5169a-21cc-44bd-a9fa-c201ead8fbd5.woff") format("woff"),url("fonts/1519114/aa202e3f-4d3b-4477-9d77-52552196781c.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 Regular";
+    src:url("fonts/1519118/9a7738a9-6fba-4bda-a3ed-15cb88cc70d2.eot?#iefix");
+    src:url("fonts/1519118/9a7738a9-6fba-4bda-a3ed-15cb88cc70d2.eot?#iefix") format("eot"),url("fonts/1519118/e4cc0b6a-4564-470a-b67c-c709b81785a2.woff2") format("woff2"),url("fonts/1519118/0f8ff5e8-0167-4d18-b5da-fbc6e60e37c5.woff") format("woff"),url("fonts/1519118/1aa4cb1f-682b-4a9b-a4f2-f9fe244ad934.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 Regular Italic";
+    src:url("fonts/1519122/17929d3d-7c27-49c0-8091-874c9dccc513.eot?#iefix");
+    src:url("fonts/1519122/17929d3d-7c27-49c0-8091-874c9dccc513.eot?#iefix") format("eot"),url("fonts/1519122/b4f48abd-4433-4ae5-99ec-1356be99da32.woff2") format("woff2"),url("fonts/1519122/1b9a038e-2532-48cf-a6f6-45a01035a822.woff") format("woff"),url("fonts/1519122/a5f658e7-7995-4287-9324-7333100643dd.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 SemiBold";
+    src:url("fonts/1519126/cccc5c38-a131-405d-abee-0825835893f7.eot?#iefix");
+    src:url("fonts/1519126/cccc5c38-a131-405d-abee-0825835893f7.eot?#iefix") format("eot"),url("fonts/1519126/b47bc0bb-a0bb-4bdc-8beb-b23af058a39c.woff2") format("woff2"),url("fonts/1519126/49cbdab2-5bec-4101-89fe-142367f54866.woff") format("woff"),url("fonts/1519126/94300a7e-e9bf-48e6-ab5e-d23f09051d53.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton W01 SemiBold Italic";
+    src:url("fonts/1519130/8bbabc60-83df-465d-afb4-5de02f80b39f.eot?#iefix");
+    src:url("fonts/1519130/8bbabc60-83df-465d-afb4-5de02f80b39f.eot?#iefix") format("eot"),url("fonts/1519130/f9fc94ca-22f9-46c6-89b9-c40d40bb5b94.woff2") format("woff2"),url("fonts/1519130/74b8cac5-d1d3-47cf-988a-742a7954519f.woff") format("woff"),url("fonts/1519130/0c630be7-ae37-4325-8b01-0a2e4937cef7.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton W01 Bold";
+    src:url("fonts/1519134/8ee81aff-a0f8-4eac-9373-c56b121cad5c.eot?#iefix");
+    src:url("fonts/1519134/8ee81aff-a0f8-4eac-9373-c56b121cad5c.eot?#iefix") format("eot"),url("fonts/1519134/54a37e3c-3ea2-4868-8a5d-45e3884ea2b3.woff2") format("woff2"),url("fonts/1519134/6474321c-4521-4033-9216-6c3722e4e861.woff") format("woff"),url("fonts/1519134/13474dc9-db91-40d3-b505-ccb5d65c08b5.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton W01 Bold Italic";
+    src:url("fonts/1519138/b98d72f2-5995-4ba1-976b-761e99a6dbc2.eot?#iefix");
+    src:url("fonts/1519138/b98d72f2-5995-4ba1-976b-761e99a6dbc2.eot?#iefix") format("eot"),url("fonts/1519138/b8b2e078-f418-45c1-b67f-1e68fca89145.woff2") format("woff2"),url("fonts/1519138/34e63dcc-7760-4f78-9b88-b8f473442437.woff") format("woff"),url("fonts/1519138/6e8e7692-5b48-446b-9b02-d582fdc5b666.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton W01 ExtraBold";
+    src:url("fonts/1519142/707c544e-6210-4236-a49a-295409ce6650.eot?#iefix");
+    src:url("fonts/1519142/707c544e-6210-4236-a49a-295409ce6650.eot?#iefix") format("eot"),url("fonts/1519142/d89883e9-6e74-446d-8136-f0dc27a5a1d0.woff2") format("woff2"),url("fonts/1519142/9ff8c3c0-6b4c-4bd6-b8be-7546782d7ec0.woff") format("woff"),url("fonts/1519142/c1f242f5-aee5-4a17-ab0b-f2575cbc8e51.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton W01 ExtraBold Italic";
+    src:url("fonts/1519146/19d246a6-9171-4be0-a330-27d88a5405e0.eot?#iefix");
+    src:url("fonts/1519146/19d246a6-9171-4be0-a330-27d88a5405e0.eot?#iefix") format("eot"),url("fonts/1519146/1e609e80-3d40-48d3-b6a1-55b6cfda3050.woff2") format("woff2"),url("fonts/1519146/163b5b76-ce89-426a-94a0-5cace05af4ba.woff") format("woff"),url("fonts/1519146/68ff870c-948d-4c0e-ac23-2d2b8462a2de.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 Heavy";
+    src:url("fonts/1519150/62462316-746e-4fc3-912d-229d6c365356.eot?#iefix");
+    src:url("fonts/1519150/62462316-746e-4fc3-912d-229d6c365356.eot?#iefix") format("eot"),url("fonts/1519150/f1c75b22-2f11-4872-9551-7879d4869b4b.woff2") format("woff2"),url("fonts/1519150/a42eacf0-779b-476d-8f78-8b04cf3faef6.woff") format("woff"),url("fonts/1519150/c8a5855b-606c-40ea-957c-52ea2cbc2b4b.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 Heavy Italic";
+    src:url("fonts/1519154/bb36737d-3ea4-47fc-b00f-a0cd37dc2d19.eot?#iefix");
+    src:url("fonts/1519154/bb36737d-3ea4-47fc-b00f-a0cd37dc2d19.eot?#iefix") format("eot"),url("fonts/1519154/8bea5658-0d25-409b-bf8f-112e53288367.woff2") format("woff2"),url("fonts/1519154/d349c643-bd2a-4fbb-a2b4-1391c31d3ad5.woff") format("woff"),url("fonts/1519154/023bd44a-cf16-4e71-b311-5da015d7dc4a.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 Black";
+    src:url("fonts/1519158/aa4a873f-7c8b-4a08-a67b-212e8964f650.eot?#iefix");
+    src:url("fonts/1519158/aa4a873f-7c8b-4a08-a67b-212e8964f650.eot?#iefix") format("eot"),url("fonts/1519158/078e6223-e14c-48e1-8157-22de8399e744.woff2") format("woff2"),url("fonts/1519158/c66e019f-69b6-41a6-8041-d44e4d95fbda.woff") format("woff"),url("fonts/1519158/bca1cfcb-1966-4dd7-b241-79b6086a3562.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton W01 Black Italic";
+    src:url("fonts/1519162/fd0023da-e75d-457c-afcf-4dbc9a6d7a5d.eot?#iefix");
+    src:url("fonts/1519162/fd0023da-e75d-457c-afcf-4dbc9a6d7a5d.eot?#iefix") format("eot"),url("fonts/1519162/c36fcb36-7fa1-478b-8ff3-41a1f47cfc66.woff2") format("woff2"),url("fonts/1519162/5be99376-5d8c-4acf-afe9-ac5bce976fc0.woff") format("woff"),url("fonts/1519162/9dadf860-bdcd-4d58-b670-f3dd55a3e623.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Thin";
+    src:url("fonts/5690029/1b0ab8ab-e230-42c9-8c8a-c954afa09391.eot?#iefix");
+    src:url("fonts/5690029/1b0ab8ab-e230-42c9-8c8a-c954afa09391.eot?#iefix") format("eot"),url("fonts/5690029/a175674f-baed-438c-89de-4d64c3154954.woff2") format("woff2"),url("fonts/5690029/108b6973-cee4-4909-930a-499835dc61ca.woff") format("woff"),url("fonts/5690029/59b600e2-0646-4527-b9a8-b79c673aff8e.ttf") format("truetype");
+} */
+@font-face{
+    font-family:"Panton Narrow W00 ExtraLight";
+    font-display: swap;
+    src:url("fonts/5690239/5b214ee4-c379-4725-8bc3-da31843c7622.eot?#iefix");
+    src:url("fonts/5690239/5b214ee4-c379-4725-8bc3-da31843c7622.eot?#iefix") format("eot"),url("fonts/5690239/5ab32966-8da5-499f-a737-0511e998927f.woff2") format("woff2"),url("fonts/5690239/326a6aa2-8882-40bd-a5b2-3d3aa4f6afde.woff") format("woff"),url("fonts/5690239/bb695e87-2355-45af-aa65-a7feddb5fd3e.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 ExtraLight I";
+    font-display: swap;
+    src:url("fonts/5690241/2de3b305-d832-4f64-9d6c-8291a21eb943.eot?#iefix");
+    src:url("fonts/5690241/2de3b305-d832-4f64-9d6c-8291a21eb943.eot?#iefix") format("eot"),url("fonts/5690241/8a1e87f7-fb24-4382-90fa-b4d803001d9b.woff2") format("woff2"),url("fonts/5690241/804c388c-5881-4c70-9a5b-250fcef399df.woff") format("woff"),url("fonts/5690241/b98d948d-4ced-4f3f-99fc-7b0fdbe8e291.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Light";
+    font-display: swap;
+    src:url("fonts/5690243/a791d6c4-df1a-45b5-a48a-a42feb33bb53.eot?#iefix");
+    src:url("fonts/5690243/a791d6c4-df1a-45b5-a48a-a42feb33bb53.eot?#iefix") format("eot"),url("fonts/5690243/87297f63-1448-4842-a08c-4bf430a5ad89.woff2") format("woff2"),url("fonts/5690243/42caae0d-4560-4054-bcc8-a4da35d1a8c7.woff") format("woff"),url("fonts/5690243/c41e60f3-df80-427d-b131-8919cb178700.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Light Italic";
+    src:url("fonts/5690245/7d78a73a-b889-4949-a77c-28c713c7eaf6.eot?#iefix");
+    src:url("fonts/5690245/7d78a73a-b889-4949-a77c-28c713c7eaf6.eot?#iefix") format("eot"),url("fonts/5690245/9272a19a-3e5d-47e5-b37a-c79c4eee0ca9.woff2") format("woff2"),url("fonts/5690245/310346f1-159a-49f2-9bbe-ebb59629b103.woff") format("woff"),url("fonts/5690245/115c7d9d-5809-475d-ba3f-7b3e3502bb80.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Regular";
+    font-display: swap;
+    src:url("fonts/5690247/b9348f44-7dc9-4d19-bd2b-60f9fea38daf.eot?#iefix");
+    src:url("fonts/5690247/b9348f44-7dc9-4d19-bd2b-60f9fea38daf.eot?#iefix") format("eot"),url("fonts/5690247/b5f35ca8-4301-4be5-a553-32d1b3fe233d.woff2") format("woff2"),url("fonts/5690247/4d91eab1-9140-4800-9bf1-eea5d2113b15.woff") format("woff"),url("fonts/5690247/e382eb1a-3014-435f-a68d-1d266afcf432.ttf") format("truetype");
+}
+/* @font-face{
+    font-family:"Panton Narrow W00 Thin Italic";
+    src:url("fonts/5690249/afe6b46e-ec5f-42c6-8614-fceefe41af97.eot?#iefix");
+    src:url("fonts/5690249/afe6b46e-ec5f-42c6-8614-fceefe41af97.eot?#iefix") format("eot"),url("fonts/5690249/2be7948e-e000-4cbf-916e-5c903a891abd.woff2") format("woff2"),url("fonts/5690249/f625038f-3b70-4deb-9129-f034b516985b.woff") format("woff"),url("fonts/5690249/493f9c97-bdcb-4cf9-8951-ecdd2783b52e.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton Narrow W00 Regular It";
+    src:url("fonts/5690269/b181916c-8498-40da-bf07-08a2518106ae.eot?#iefix");
+    src:url("fonts/5690269/b181916c-8498-40da-bf07-08a2518106ae.eot?#iefix") format("eot"),url("fonts/5690269/db880589-11c6-4da8-84a1-dbfaa786edb8.woff2") format("woff2"),url("fonts/5690269/49b07fe5-4e1c-44c0-bbc2-936eee1c7e77.woff") format("woff"),url("fonts/5690269/4e6ad8e0-cd8f-415f-b6ab-6fcf761d062c.ttf") format("truetype");
+} */
+@font-face{
+    font-family:"Panton Narrow W00 SemiBold";
+    font-display: swap;
+    src:url("fonts/5690273/3d632d29-9e5f-4e28-90d1-456dc64f2d70.eot?#iefix");
+    src:url("fonts/5690273/3d632d29-9e5f-4e28-90d1-456dc64f2d70.eot?#iefix") format("eot"),url("fonts/5690273/2ec82c2b-e3bf-470e-ae75-d14eac9e9836.woff2") format("woff2"),url("fonts/5690273/364ac738-ffc5-4473-abca-73fd77a1ad1c.woff") format("woff"),url("fonts/5690273/e72998a6-d046-4243-8676-9e1953bb071a.ttf") format("truetype");
+}
+/* @font-face{
+    font-family:"Panton Narrow W00 SemiBold It";
+    src:url("fonts/5690277/8c45aab6-a148-410d-9558-6f34feb6c142.eot?#iefix");
+    src:url("fonts/5690277/8c45aab6-a148-410d-9558-6f34feb6c142.eot?#iefix") format("eot"),url("fonts/5690277/b3619f69-b65e-4b5c-a41f-f1fd3bcaa0dc.woff2") format("woff2"),url("fonts/5690277/ff97953f-867b-472e-8b79-2ec56f8ce548.woff") format("woff"),url("fonts/5690277/bf4a951c-abf7-4f6c-9014-6dd2c260128a.ttf") format("truetype");
+} */
+@font-face{
+    font-family:"Panton Narrow W00 Bold";
+    font-display: swap;
+    src:url("fonts/5690281/ca9f18a3-c1d6-49b8-a1d9-80e14b057417.eot?#iefix");
+    src:url("fonts/5690281/ca9f18a3-c1d6-49b8-a1d9-80e14b057417.eot?#iefix") format("eot"),url("fonts/5690281/a8e650e3-7895-4742-a1a6-f372e9afa505.woff2") format("woff2"),url("fonts/5690281/b3250bf9-191f-4283-b58e-1ff3dc1c5f2e.woff") format("woff"),url("fonts/5690281/6f7e8918-2afe-42f3-a98d-10af29beffe3.ttf") format("truetype");
+}
+/* @font-face{
+    font-family:"Panton Narrow W00 Bold Italic";
+    src:url("fonts/5690285/a337eb43-c83d-4840-a900-afe19e726f77.eot?#iefix");
+    src:url("fonts/5690285/a337eb43-c83d-4840-a900-afe19e726f77.eot?#iefix") format("eot"),url("fonts/5690285/e047b8e1-7acd-4cab-82ff-3ffc6cbad6de.woff2") format("woff2"),url("fonts/5690285/6f42568e-8e84-4e48-9832-b34ea9c09ab9.woff") format("woff"),url("fonts/5690285/07a7b972-5fe9-4339-b68b-6dbba7089117.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton Narrow W00 ExtraBold";
+    src:url("fonts/5690289/7a0fcde2-4148-4a28-bff6-4bcc41d9bf8a.eot?#iefix");
+    src:url("fonts/5690289/7a0fcde2-4148-4a28-bff6-4bcc41d9bf8a.eot?#iefix") format("eot"),url("fonts/5690289/beed56a6-2549-439e-8882-9f76d73f7955.woff2") format("woff2"),url("fonts/5690289/f2c7496d-5fec-4ccb-b6fe-12874a7fe007.woff") format("woff"),url("fonts/5690289/1b73679b-95f4-455c-99ba-6f99da56c826.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 ExtraBold It";
+    src:url("fonts/5690293/79742dfb-738c-42f6-9214-f257bcf51cee.eot?#iefix");
+    src:url("fonts/5690293/79742dfb-738c-42f6-9214-f257bcf51cee.eot?#iefix") format("eot"),url("fonts/5690293/bcbe4f09-0ea2-4229-aca9-f13a51f213e5.woff2") format("woff2"),url("fonts/5690293/7a2176a0-4d7d-4b76-80aa-4ba6bcd1fc1b.woff") format("woff"),url("fonts/5690293/95994e3f-50bb-4429-8895-4a813716277c.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Heavy";
+    src:url("fonts/5690297/d24a5dd9-3023-487c-9a0f-31b50d79dc57.eot?#iefix");
+    src:url("fonts/5690297/d24a5dd9-3023-487c-9a0f-31b50d79dc57.eot?#iefix") format("eot"),url("fonts/5690297/73583885-467a-4123-8e39-a591f8b00b69.woff2") format("woff2"),url("fonts/5690297/dcd738b8-23f6-4221-8745-829c392633ea.woff") format("woff"),url("fonts/5690297/27bbaa2f-c5f7-4bbd-9434-92024a0c02b3.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Heavy Italic";
+    src:url("fonts/5690301/10869be0-3389-4375-bce8-309ea55f71bd.eot?#iefix");
+    src:url("fonts/5690301/10869be0-3389-4375-bce8-309ea55f71bd.eot?#iefix") format("eot"),url("fonts/5690301/7937d43c-d794-44d8-b9f3-950caaa0bea0.woff2") format("woff2"),url("fonts/5690301/a839f012-638b-4a0a-8590-ec7a284523c7.woff") format("woff"),url("fonts/5690301/13ab69df-8aca-4d47-adda-0f31512eaae1.ttf") format("truetype");
+} */
+/* @font-face{
+    font-family:"Panton Narrow W00 Black";
+    src:url("fonts/5690305/3cf12de3-af77-43a7-964e-24be36f2ffcb.eot?#iefix");
+    src:url("fonts/5690305/3cf12de3-af77-43a7-964e-24be36f2ffcb.eot?#iefix") format("eot"),url("fonts/5690305/63554a2e-6c4f-4763-978a-511389ae9526.woff2") format("woff2"),url("fonts/5690305/6f6ba3e1-0b11-4b32-9009-22358514f878.woff") format("woff"),url("fonts/5690305/be229c33-ca76-4c4d-b438-02df70fc9c2f.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Panton Narrow W00 Black Italic";
+    src:url("fonts/5690309/898bc58a-3e29-4923-98a6-41f7fd0e85ff.eot?#iefix");
+    src:url("fonts/5690309/898bc58a-3e29-4923-98a6-41f7fd0e85ff.eot?#iefix") format("eot"),url("fonts/5690309/82d67c87-c9a2-461c-858f-31f67efd7d46.woff2") format("woff2"),url("fonts/5690309/8d6a18dc-a719-4d7e-86e2-f9997a0d1a35.woff") format("woff"),url("fonts/5690309/1d352746-9945-4905-9640-24c79e6ea371.ttf") format("truetype");
+} */

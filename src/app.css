@@ -1,0 +1,354 @@
+/* .App { text-align: center;}
+.App-logo { animation: App-logo-spin infinite 20s linear; height: 40vmin;}
+.App-header { background-color: #282c34; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: calc(10px + 2vmin); color: white;}
+.App-link { color: #61dafb;}
+
+@keyframes App-logo-spin {
+  from {transform: rotate(0deg);}
+  to   {transform: rotate(360deg);}
+} */
+
+/* .App {  text-align: center;line-height: 1.5;}
+.App-logo {  height: 80px;}
+.App-header {  background-color: #222;  height: 80px;  padding: 20px;  color: white;}
+.App-intro {  font-size: large;} */
+
+html, body {
+  height: 100%;
+}
+
+#root, .dynamicCLass {
+  height: 100%
+}
+
+.bg-robert-gordon {
+  background-image: url("https://www.rgu.ac.uk/images/Types_Of_Study/UG-Courses-ZF-6885-75897-1-001.jpg");
+  background: linear-gradient(rgba(255, 255, 255, .95), rgba(255, 255, 255, .95)), url("https://www.rgu.ac.uk/images/Types_Of_Study/UG-Courses-ZF-6885-75897-1-001.jpg");
+  background-position: center;
+  -webkit-background-size: 100%;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%; 
+  text-align: center;
+}
+
+.logo {
+  width: 317px;
+  display: block;
+}
+
+.logo-btn-wrapper {
+  background-color: white;
+  padding: 21px 0 22px 40px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ccc;
+}
+
+.cancel-btn-wrapper {
+  background-color: #712177;
+  padding: 25px 17px;
+}
+
+.cancel-btn-wrapper a {
+  color: #f7f2f7;
+  line-height: 0;
+  font-size: 1em;
+  text-align: right;
+  display: block;
+}
+
+.cancel-btn-wrapper a:hover {
+  /* color:rgb(113,33,119); */
+  text-decoration: underline;
+  color: white;
+}
+
+h1.heading span {
+  color: black;
+  border-bottom: 3px solid black;
+  display: inline-block;
+  padding: 10px 40px;
+  margin-bottom: 50px;
+}
+
+ul.city-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul.city-list li {
+  display: inline-block;
+  border: 3px solid#ff7914;
+  width: 300px;
+  margin: 20px 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+}
+
+.home-ticket {
+  width: 200px!important;
+  margin-bottom: 75px!important;
+  height: 200px!important;
+  margin-top: -30px!important;
+}
+
+.home-action-links span a, .home-action-links a span {
+  display: inline-block;
+  border: 3px solid#ff7914;
+  width: 300px;
+  margin: 20px 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  color: black;
+}
+
+ul.footer-flow {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.footer-flow li {
+  border: 1px solid #712177;
+  background-color: #712177;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+ul.footer-flow li a {
+  color: white;
+  /* height: 10em; */
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+ul.footer-flow li a span {
+  margin: 0;
+  font-weight: 400;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  z-index: 10;
+  background-color: #f7f2f7;
+  padding: 5px 0 20px 0;
+  border-top: 1px solid #ccc;
+  z-index: 9999;
+}
+
+.footer span.title {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.plates {
+  font-family: 'UKNumberPlate';
+  background: white;
+  color: #712177;
+  margin: 4px 10px 4px 5px!important;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.permit-frequency-item {
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+  cursor: pointer;
+  transition: background-color .3s linear;
+}
+
+.permit-frequency-item:hover {
+  background: rgba(113, 33, 119, .2);
+  /* -webkit-transition: opacity 2.0s ease-in;
+  -moz-transition: opacity 2.0s ease-in;
+    -o-transition: opacity 2.0s ease-in; */
+  /* opacity: 1; */
+}
+
+.selectedsite-enter-done {
+  font-family: Panton Narrow W00 Regular;
+  height: 100%;
+}
+
+.site-info {
+  height: 50%;
+  padding: 10px;
+}
+
+.site-time {
+  height: 50%;
+  background-color: rgb(220, 220, 220);
+}
+
+.frequency-text {
+  display: inline-block;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.site-info .general {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.site-info .general.sitename {
+  display: block;
+  font-size: 2em;
+  margin-bottom: 15px;
+}
+
+.site-info .general.town {
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.sitehours-title {
+  font-size: 2em;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+
+.site-day-wrapper div {
+  text-align: left;
+}
+
+.site-day-wrapper .text-wrapper {
+  display: inline-block;
+  text-align: left;
+}
+
+.site-time-day-wrapper .general {
+  width: 49%;
+  float: left;
+  text-align: center;
+}
+
+.close-wrapper {
+  position: absolute;
+  right: 5px;
+  z-index: 100;
+}
+
+.MuiBackdrop-root {
+  display: none;
+}
+
+.site-select-wrapper {
+  position: relative;
+}
+
+.site-select-wrapper .load-spinner-wrapper {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.vrm-sub-title {
+  margin-bottom: 40px;
+}
+
+.vrm-btn-wrapper {
+  margin-top: 40px;
+  display: inline-block;
+}
+
+.vrm-item-wrapper {
+  display: block;
+  width: 360px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.vrm-item-wrapper::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.vrm-item-wrapper span {
+  margin-right: 10px;
+}
+
+.vrm-item-wrapper .error-text {
+  display: inline-block;
+}
+
+
+
+.calendar-btn-wrapper {
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.Cal__Day__selection {
+  color: white!important;
+}
+
+.MuiFormHelperText-root.MuiFormHelperText-contained.Mui-error {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 47px;
+}
+
+.error {
+  color: red;
+}
+
+.stripe-form {
+  border: 1px solid #e6e3e3;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.vrm-input {
+  border: 3px solid red;
+}
+
+.stripForm-wrapper .error.text {
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.stripForm-wrapper .stripe-form.error {
+  border: 3px solid red; 
+}
+
+.customPaper::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.editBtn.MuiButton-containedSecondary {
+  background-color: #47d447;
+}
+
+.editBtn.MuiButton-containedSecondary:hover {
+  background-color: #40af40;
+}
+
+.footer-flow.pre-product-list li {
+  border: 1px solid #dddddd;
+  background-color: #dddddd;
+}
+
+.footer-flow.pre-product-list {
+  cursor: not-allowed;
+}
