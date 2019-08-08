@@ -185,6 +185,14 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
     updateScreenInfo = () => { return window.innerWidth > 700 };
 
     componentDidUpdate(prevProps: IPurchaseProps, prevState: IPurchaseState) {
+        
+        if (this.props.preProduct !== prevProps.preProduct && this.props.product !== null) {
+            let p = { ...this.state.purchase, productId: this.props.product.permitProductId, productName: this.props.product.permitProductName, maxVRMs: this.props.product.maxVRMs, activeVRMs: this.props.product.activeVRMs, frequency: createProductFrequenciesFromProductPrices(this.props.product.prices.find(x => x.isCurrent))[0] };
+            this.setState({ purchase: p }, () => {
+                this.props.history.push({ pathname: "/purchase/summary", state: { purchase: this.state.purchase } });
+            });
+        }
+
         if (this.props.product && !prevProps.product) {
             if (this.props.product.prices.length === 1) {
                 let p = {
@@ -234,13 +242,6 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
             let p = { ...purchase, customer: user().customer };
             this.setState({ purchase: p }, () => {
                 this.props.history.push({ pathname: this.state.nextUrl, state: { purchase: this.state.purchase } });
-            });
-        }
-
-        if (this.props.preProduct !== prevProps.preProduct && this.props.product !== null) {
-            let p = { ...this.state.purchase, productId: this.props.product.permitProductId, productName: this.props.product.permitProductName, maxVRMs: this.props.product.maxVRMs, activeVRMs: this.props.product.activeVRMs, frequency: createProductFrequenciesFromProductPrices(this.props.product.prices.find(x => x.isCurrent))[0] };
-            this.setState({ purchase: p }, () => {
-                this.props.history.push({ pathname: "/purchase/summary", state: { purchase: this.state.purchase } });
             });
         }
     }
@@ -412,7 +413,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
 
     render() {
         const { products, isProcessing, towns, sites, productFrequencies, product, permit, town } = this.props;
-        const { step, isDesktop, purchase } = this.state;3
+        const { step, isDesktop, purchase } = this.state; 3
         const appUser = user();
         const userCustomer = this.props.user.customer !== null ? this.props.user['user'].customer : null
 
@@ -496,8 +497,8 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
                             <h1 className="heading">{this.heading('Confirmation')}</h1>
                             {isProcessing && <LoadSpinner />}
                             <PurchaseConfirmation pendingCardPayment={this.props.pendingCardPayment} payingDeposit={this.state.payingDeposit} purchase={purchase} permit={permit} />
-                            { this.props.preProduct ? 
-                                <BkToIntroBtn onClick={() => this.dashboard()}>Manage Permits</BkToIntroBtn> : 
+                            {this.props.preProduct ?
+                                <BkToIntroBtn onClick={() => this.dashboard()}>Manage Permits</BkToIntroBtn> :
                                 <BkToIntroBtn onClick={() => this.startIntro()}>intro</BkToIntroBtn>
                             }
                         </React.Fragment>}
