@@ -94,7 +94,7 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
   render() {
     //const {customer, isProcessing, clients, regions, countries, fetchCustomer, onSave, resetSuccess, onCancel, isSaved } = this.props;
     return (
-      <AppContainer title='Dashboard' isPurchase={false} isLogOut={false} isManagement={this.props.user.userId !== 0} renderFooter={() => { return true && this.thePurchaseFooter() }} render={() => {
+      <AppContainer title="Dashboard" isPurchase={false} renderFooter={() => { return true && this.thePurchaseFooter() }} render={() => {
         //if (isProcessing && customer === undefined) { return <AppLoading/>};
         return (
           <HomeWrapper>

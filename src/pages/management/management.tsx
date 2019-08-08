@@ -117,7 +117,7 @@ export const Management = withStyles(styles)(class Management extends React.Comp
         // const { permits } = this.props;
         //const {customer, isProcessing, clients, regions, countries, fetchCustomer, onSave, resetSuccess, onCancel, isSaved } = this.props;
         return (
-            <AppContainer title='Reset Password' isPurchase={false} isLogOut={false} isManagement={true} renderFooter={() => { return true && <span></span> }} render={() => {
+            <AppContainer title='Reset Password' isPurchase={false} renderFooter={() => { return true && <span></span> }} render={() => {
                 return (
                     <div>
                         {this.state['step'] === 0 && <Permits permits={this.props.permits} permitEdit={this.permitEdit} />}

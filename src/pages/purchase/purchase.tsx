@@ -237,7 +237,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
             });
         }
 
-        if (this.props.preProduct !== prevProps.preProduct) {
+        if (this.props.preProduct !== prevProps.preProduct && this.props.product !== null) {
             let p = { ...this.state.purchase, productId: this.props.product.permitProductId, productName: this.props.product.permitProductName, maxVRMs: this.props.product.maxVRMs, activeVRMs: this.props.product.activeVRMs, frequency: createProductFrequenciesFromProductPrices(this.props.product.prices.find(x => x.isCurrent))[0] };
             this.setState({ purchase: p }, () => {
                 this.props.history.push({ pathname: "/purchase/summary", state: { purchase: this.state.purchase } });
@@ -417,7 +417,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         const userCustomer = this.props.user.customer !== null ? this.props.user['user'].customer : null
 
         return (
-            <AppContainer title='Purchase Permit' isLogOut={false} isManagement={false}  isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}
+            <AppContainer title='Purchase Permit' isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}
                 render={() => {
                     return <Flipper flipKey={step === 1 || step === 2}><HomeWrapper>
                         {step === 0 && <React.Fragment>
