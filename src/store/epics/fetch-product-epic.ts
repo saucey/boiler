@@ -28,15 +28,3 @@ export const fetchPermitProductEpic = (action$: ActionsObservable<IAppAction>, s
             )
         })
     );
-
-export const fetchPrePopulatedProductEpic = (action$: ActionsObservable<IAppAction>, state$: Store<IAppState>, { api, endPointKeys }: IEpicDependency):
-    Observable<IAppAction> => action$.pipe(
-        ofType(purchaseDataStateActions.PRE_POPULATED_PERMIT),
-        map(({ payload }) => {
-            console.log(payload.permitProductId, 'permit product ID!')
-            console.log(payload, 'prepopulated after login!')
-            // return payload;
-            return fetchPermitProductSuccess(payload.product)
-            // appHistory().push(routes.purchasePermitSite());
-        })
-    );

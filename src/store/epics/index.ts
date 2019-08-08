@@ -1,4 +1,4 @@
-import { fetchPermitProductEpic, fetchPrePopulatedProductEpic } from './fetch-product-epic';
+import { fetchPermitProductEpic } from './fetch-product-epic';
 import { fetchPermitsEpic, fetchPermitEpic } from './fetch-permits-epic';
 import { fetchCustomerEpic } from './fetch-customers-epic';
 import { appInitializeEpic, appInitializingEpic, appInitializedEpic } from './initialize-epic';
@@ -23,7 +23,6 @@ export const epics = {
     fetchSitesForClientByLocationSuccessEpic,
     fetchPermitProductsForSiteEpic,
     fetchPermitProductEpic,
-    fetchPrePopulatedProductEpic,
     fetchCustomerEpic,
     upsertCustomerEpic,
     upsertCustomerSuccessEpic,

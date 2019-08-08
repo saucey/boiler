@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable';
-import { fetchPermitProductEpic, fetchPrePopulatedProductEpic } from './epics/fetch-product-epic'
+import { fetchPermitProductEpic } from './epics/fetch-product-epic'
 import { fetchPermitsEpic, fetchPermitEpic } from './epics/fetch-permits-epic'
 import { fetchCustomerEpic } from './epics/fetch-customers-epic'
 import { fetchRefDataProductFrequenciesEpic,fetchRefDataSiteTownsForClientEpic, fetchRefDataClientsEpic} from './epics/fetch-ref-data-epic'
@@ -20,7 +20,6 @@ export const rootEpic = combineEpics(
     fetchSitesForClientByLocationSuccessEpic,
     fetchPermitProductsForSiteEpic,
     fetchPermitProductEpic,
-    fetchPrePopulatedProductEpic,
     upsertPermitEpic, upsertPermitSuccessEpic,upsertPermitEpicUpdate,
     insertDirectDebitCustomerEpic,
     insertCardChargeEpic,

@@ -79,8 +79,6 @@ export const Management = withStyles(styles)(class Management extends React.Comp
             guid: setStepNumber(props.location.pathname) === 2 ? new URLSearchParams(props.location.search).get('token') : '',
             purchase: this.props.location.state ? this.props.location.state.purchase : new Purchase(null, null)
         }
-
-        console.log(this.props.location, 'the location!!!')
     }
 
     componentDidUpdate(prevProps: IManagementProps, prevState: IManagementState) {

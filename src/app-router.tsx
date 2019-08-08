@@ -4,17 +4,8 @@ import { PurchaseContainer, HomeContainer, ManagementContainer, PermitManagement
 import { appHistory } from './app-history';
 import { ConnectedRouter } from 'connected-react-router';
 import { Redirect } from 'react-router';
-import { IAppState } from './store/state';
-import { store } from './store';
-
-
 
 export const AppRouter = () => {
-    let state: IAppState = store.getState() as IAppState;
-    let clientId = state.appContainer.client.clientId;
-
-    console.log(clientId, 'client ID')
-
     return (
         <ConnectedRouter history={appHistory()}>
             <Switch>

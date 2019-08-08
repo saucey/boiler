@@ -45,7 +45,6 @@ export const purchaseDataStateActions = {
     UPDATE_PENDING_CARD_PAYMENT: 'UPDATE_PENDING_CARD_PAYMENT',
     RESET_PURCHASE_UPDATE: 'RESET_PURCHASE_UPDATE',
     RESET_PURCHASE_STATE: 'RESET_PURCHASE_STATE',
-    PRE_POPULATED_PERMIT: 'PRE_POPULATED_PERMIT',
     FETCH_PRE_PRODUCT_SUCCESS: 'FETCH_PRE_PRODUCT_SUCCESS',
 }
 
@@ -142,11 +141,6 @@ export const upsertCustomerSuccess = (customer: ICustomer): IAppAction => ({
 export const upsertCustomerError = (appError: IAppError): IAppAction => ({
     type: purchaseDataStateActions.UPSERT_CUSTOMER_ERROR,
     payload: appError
-});
-
-export const prepopulatedPermit = (product: IPermitProduct, preProduct: boolean): IAppAction => ({
-    type: purchaseDataStateActions.PRE_POPULATED_PERMIT,
-    payload: {product, preProduct}
 });
 
 export const newCustomer = (customer: ICustomer): IAppAction => ({
