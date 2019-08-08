@@ -32,9 +32,7 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
 
   constructor(props: IHomeProps) {
     super(props);
-
     // this.props.client
-    console.log(this.props.client.clientId, 'clients')
   }
 
   componentDidUpdate(prevProps: IHomeProps, prevState) {

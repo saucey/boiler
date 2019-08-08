@@ -7,6 +7,7 @@ import { IProductSearchModel, ISiteLocationSearchModel, IPurchase, ICustomerAddF
 import { IAppAction } from '../../store/app-action';
 import { IBankAccountAndSubscription } from '../../models/direct-debits';
 import { IPermitEditForm } from '../../models/permit-forms';
+import { Authorisation } from '../../components/higher-order-components/authorisation';
 // import {product, vrms, startDate, town} from '../../data-mocks';
 
 
@@ -102,3 +103,4 @@ const mapDispatchToProps = (dispatch: Dispatch<IAppAction>) => {
 };
 
 export const PurchaseContainer = connect(mapStateToProps, mapDispatchToProps)(PurchaseHome);
+export const WithAuthorisationCustomersContainer = Authorisation(connect(mapStateToProps, mapDispatchToProps)(PurchaseHome), 'example_of_allowed_string');
