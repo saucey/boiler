@@ -352,3 +352,9 @@ ul.footer-flow li a span {
 .footer-flow.pre-product-list {
   cursor: not-allowed;
 }
+
+.resetMsg {
+  color: #15c115;
+  margin-top: 20px;
+
+}

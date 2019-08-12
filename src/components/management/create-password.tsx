@@ -131,7 +131,8 @@ const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recover
 
     return (
         <div>
-            <h1 className="heading"><span>Create Password</span></h1>
+            <h1 className="heading"><span>Create a New Password</span></h1>
+            <p>Please enter the e-mail address supplied as part of the permit application details</p>
             <ValidatorForm
                 onSubmit={() => recoverPassword(email)}
                 onError={errors => console.log(errors, 'errors')}>
@@ -154,6 +155,10 @@ const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recover
                     <Button className={classes.button} type="submit">request</Button>
                 </div>
 
+                
+
+                {recoverPasswordGuid && <p className="resetMsg">A password reset link has been send to your designated e-mail address <br/>Select 'LOG IN' to return to the main 'LOG IN' screen</p>}
+
             </ValidatorForm>
             <Snackbar
                 anchorOrigin={{
@@ -161,13 +166,13 @@ const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recover
                     horizontal: 'left',
                 }}
                 open={open}
-                autoHideDuration={6000}
+                autoHideDuration={15000}
                 onClose={() => resetRecoverPasswordGuid()}
             >
                 <MySnackbarContentWrapper
                     onClose={() => resetRecoverPasswordGuid()}
                     variant="success"
-                    message="A create password link will be sent your email address"
+                    message="A password reset link has been send"
                 />
             </Snackbar>
         </div>
