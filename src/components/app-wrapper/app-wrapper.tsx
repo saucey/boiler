@@ -82,6 +82,12 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
           <Link to="/management/permits">PERMIT LIST</Link>
         )
       }
+    } else {
+      if(url === '/management/begin-password-reset' || url === '/management/create-password') {
+        return (
+          <Link to="/">CANCEL</Link>
+        )
+      }
     }
     return '';
   }

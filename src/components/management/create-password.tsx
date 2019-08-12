@@ -11,7 +11,7 @@ import clsx from 'clsx';
 
 const variantIcon = {
     success: CheckCircleIcon
-  };
+};
 
 const useStyles = makeStyles(theme => ({
     button: {
