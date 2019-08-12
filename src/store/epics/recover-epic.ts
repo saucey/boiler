@@ -16,13 +16,9 @@ export const appPasswordResetrequestEpic = (action$: ActionsObservable<IAppActio
         }
 
         return api.post(endPointKeys.base, 'ResetPassword/PasswordResetRequest', data).pipe(
-            map(res => {
-                console.log(res, 'res from reset password')
-                return res.data
-            }),            
+            map(res => res.data),
             switchMap((user: IAppUser) => [
-                passwordRequestSuccessful(),
-                fetchCustomerProduct(user.userId)
+                passwordRequestSuccessful()
             ]),
             catchError(error => {
                 //const appError: IAppError = { error, message:'Failed to get authorisation from the API'};
@@ -37,11 +33,10 @@ export const appPasswordResetrequestEpic = (action$: ActionsObservable<IAppActio
     
             return api.post(endPointKeys.base, 'ResetPassword/PasswordSet', payload).pipe(
                 map(res => res.data),
-                map((user: IAppUser) => {
-                    
-                    return loginSuccess(user) /* && loginPurchaseSuccess(user.customer)*/;
-                    
-                }),
+                switchMap((user: IAppUser) => [
+                    loginSuccess(user),
+                    fetchCustomerProduct(user.userId)
+                ]),
                 catchError(error => {
                     //const appError: IAppError = { error, message:'Failed to get authorisation from the API'};
                     return of(loginError(error));
