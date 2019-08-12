@@ -6,7 +6,6 @@ import { CostSummaryTable } from '../cost-summary-table';
 import NumberFormat from 'react-number-format'
 import { dateTimeHelper } from '../../helpers';
 import { RouteComponentProps } from 'react-router-dom';
-import { withLocalize, Translate } from 'react-localize-redux';
 // import movieTranslations from "../../translations/movies.json";
 
 export interface IPurchaseSummaryProps {
@@ -42,18 +41,12 @@ export class PurchaseSummary extends React.Component<IPurchaseSummaryProps & Rou
                         <div>{`Your ${purchase.spaces > 1 ? "permits" : "permit"} will start on ${formattedEndDate}`}</div>}
                     <CostSummaryTable payingDeposit={this.props.payingDeposit} purchase={purchase} />
                     <div style={{ fontFamily: 'Panton Narrow W00 Light Italic' }}>{frequencyName === "Monthly" ? "Continue to enter bank account details" : "Continue to enter card details for payment"}</div>
-                    {[1, 2].map(item =>
-                        <div key={item}>
-                            <h3><Translate id={`movie${item}.title`} /></h3>
-                            <p><Translate id={`movie${item}.description`} /></p>
-                        </div>
-                    )}
                 </div>
             </React.Fragment>
         )
     }
 }
 
-export default withLocalize(PurchaseSummary);
+export default PurchaseSummary;
 
 
