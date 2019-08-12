@@ -34,6 +34,8 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
       isOpen: this.props.isOpen,
       urlLocation: window.location.pathname
     };
+
+    console.log(window.location, 'pathname')
   }
 
   render() {
@@ -83,7 +85,7 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
         )
       }
     } else {
-      if(url === '/management/begin-password-reset' || url === '/management/create-password') {
+      if(url === '/management/begin-password-reset' || url === '/management/create-password' || url === '/management/reset-password') {
         return (
           <Link to="/">CANCEL</Link>
         )
