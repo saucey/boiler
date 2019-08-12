@@ -16,7 +16,10 @@ export const appPasswordResetrequestEpic = (action$: ActionsObservable<IAppActio
         }
 
         return api.post(endPointKeys.base, 'ResetPassword/PasswordResetRequest', data).pipe(
-            map(res => res.data),
+            map(res => {
+                console.log(res, 'res from reset password')
+                return res.data
+            }),            
             switchMap((user: IAppUser) => [
                 passwordRequestSuccessful(),
                 fetchCustomerProduct(user.userId)
