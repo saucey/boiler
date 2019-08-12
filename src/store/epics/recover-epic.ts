@@ -1,8 +1,9 @@
 import { ActionsObservable, StateObservable, ofType } from "redux-observable";
 import { Observable, of } from "rxjs";
-import { mergeMap, map, catchError } from "rxjs/operators";
+import { mergeMap, map, catchError, switchMap } from "rxjs/operators";
 import { IEpicDependency, IAppUser } from "../../models";
-import { appContainerStateActions, loginSuccess, loginError, passwordRequestSuccessful /*loginPurchaseSuccess*/ } from "../actions";
+import { appContainerStateActions, loginSuccess, loginError, passwordRequestSuccessful, /*loginPurchaseSuccess*/ 
+fetchCustomerProduct} from "../actions";
 import { IAppAction } from "../app-action";
 import { IAppState } from "../state";
 
@@ -16,9 +17,10 @@ export const appPasswordResetrequestEpic = (action$: ActionsObservable<IAppActio
 
         return api.post(endPointKeys.base, 'ResetPassword/PasswordResetRequest', data).pipe(
             map(res => res.data),
-            map((user: IAppUser) => {
-                return passwordRequestSuccessful() /* && loginPurchaseSuccess(user.customer)*/;
-            }),
+            switchMap((user: IAppUser) => [
+                passwordRequestSuccessful(),
+                fetchCustomerProduct(user.userId)
+            ]),
             catchError(error => {
                 //const appError: IAppError = { error, message:'Failed to get authorisation from the API'};
                 return of(loginError(error));
@@ -35,6 +37,7 @@ export const appPasswordResetrequestEpic = (action$: ActionsObservable<IAppActio
                 map((user: IAppUser) => {
                     
                     return loginSuccess(user) /* && loginPurchaseSuccess(user.customer)*/;
+                    
                 }),
                 catchError(error => {
                     //const appError: IAppError = { error, message:'Failed to get authorisation from the API'};

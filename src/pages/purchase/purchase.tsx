@@ -30,6 +30,11 @@ import { /*faMapMarkerAlt, faParking, faReceipt, faCarAlt, faCalendarCheck*/
     faSpinner
 } from '@fortawesome/free-solid-svg-icons'
 
+// import { renderToStaticMarkup } from "react-dom/server";
+// import globalTranslations from "../../translations/global.json";
+// import movieTranslations from "../../translations/movies.json";
+// import { Translate } from "react-localize-redux";
+
 const BkToIntroBtn = withStyles(theme => ({
     root: {
         backgroundColor: 'none',
@@ -168,6 +173,25 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
             payingDeposit: isPayingDeposit(this.props.client.clientId),
             townSet: setStepNumber(props.location.pathname) === 1 ? false : this.props.town.length === undefined
         };
+
+        // var languageString = navigator.language || navigator['userLanguage'] || '';
+        // var re = /_|-/
+        // var language = languageString.split(re)[0];
+        // var code = /(en|fr|es)/;
+        // language = Boolean(language.match(code)) ? language : 'en';
+
+
+        // this.props.initialize({
+        //     languages: [
+        //         { name: "English", code: "en" },
+        //         { name: "French", code: "fr" },
+        //         { name: "spanish", code: "es" }
+        //     ],
+        //     translation: globalTranslations,
+        //     options: { renderToStaticMarkup, defaultLanguage: language }
+        // });
+
+        // this.props.addTranslation(movieTranslations);
     }
 
     componentDidMount() {
@@ -185,7 +209,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
     updateScreenInfo = () => { return window.innerWidth > 700 };
 
     componentDidUpdate(prevProps: IPurchaseProps, prevState: IPurchaseState) {
-        
+
         if (this.props.preProduct !== prevProps.preProduct && this.props.product !== null) {
             let p = { ...this.state.purchase, productId: this.props.product.permitProductId, productName: this.props.product.permitProductName, maxVRMs: this.props.product.maxVRMs, activeVRMs: this.props.product.activeVRMs, frequency: createProductFrequenciesFromProductPrices(this.props.product.prices.find(x => x.isCurrent))[0] };
             this.setState({ purchase: p }, () => {
@@ -413,7 +437,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
 
     render() {
         const { products, isProcessing, towns, sites, productFrequencies, product, permit, town } = this.props;
-        const { step, isDesktop, purchase } = this.state; 3
+        const { step, isDesktop, purchase } = this.state;
         const appUser = user();
         const userCustomer = this.props.user.customer !== null ? this.props.user['user'].customer : null
 
@@ -509,6 +533,9 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
                         </React.Fragment>}
                         {step === 13 && <React.Fragment>
                             <h1 className="heading">{this.heading('Login')}</h1>
+                            {/* <button> */}
+                            {/* <Translate id="movie.title"></Translate> */}
+                            {/* </button> */}
                             {isProcessing && <LoadSpinner />}
                             <SignIn nextUrl={this.state.nextUrl} errors={this.props.errors} login={(userName, password, nextUrl) => this.login(userName, password, nextUrl)} />
                         </React.Fragment>}

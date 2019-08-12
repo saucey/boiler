@@ -8,6 +8,7 @@ import { IClient, Purchase, IAppUser, ITown, IPurchase, ISiteLocationSearchModel
 import { Link } from 'react-router-dom'
 import Measure from 'react-measure';
 import { createProductFrequenciesFromProductPrices } from '../../helpers/frequency';
+// import { withLocalize } from 'react-localize-redux'
 
 const HomeWrapper = glamorous.div({ label: 'HomeWrapper', display: 'flex', flexDirection: 'column' });
 
@@ -32,7 +33,8 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
 
   constructor(props: IHomeProps) {
     super(props);
-    // this.props.client
+    this.state = {}
+
   }
 
   componentDidUpdate(prevProps: IHomeProps, prevState) {
@@ -126,3 +128,5 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
     );
   }
 }
+
+export default Home;

@@ -1,0 +1,4 @@
+{
+  "title": ["My Article title", "My Article title FR", "My Article title ES"],
+  "greeting": [null, "Bonjour ${name}!", "Hola ${name}!"]
+}

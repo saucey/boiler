@@ -42,7 +42,7 @@ authentication.initialize({
 bootstrap.init(store.dispatch)
     .then(() => {
         ReactDOM.render(
-            <IntlProvider locale={languageWithoutRegionCode} messages={messages}>
+            <IntlProvider locale={'es'} messages={messages}>
                 <App store={store} />
             </IntlProvider>
             , document.getElementById('root'))

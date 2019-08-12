@@ -5,6 +5,7 @@ import { Home } from './home';
 import { fetchCustomer, logOut, fetchSitesForClientByLocation, fetchPermitProductsForSite } from '../../store/actions';
 import { IAppAction } from '../../store/app-action';
 import { newUser, ISiteLocationSearchModel, IPurchase, IProductSearchModel } from '../../models';
+// import { withLocalize } from 'react-localize-redux';
 
 const mapStateToProps = (state: IAppState) => {
     return {

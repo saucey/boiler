@@ -9,7 +9,7 @@ import { IBankAccountAndSubscription } from '../../models/direct-debits';
 import { IPermitEditForm } from '../../models/permit-forms';
 import { Authorisation } from '../../components/higher-order-components/authorisation';
 // import {product, vrms, startDate, town} from '../../data-mocks';
-
+import { withLocalize } from "react-localize-redux";
 
 const mapStateToProps = (state: IAppState) => {
 
@@ -102,5 +102,6 @@ const mapDispatchToProps = (dispatch: Dispatch<IAppAction>) => {
 
 };
 
-export const PurchaseContainer = connect(mapStateToProps, mapDispatchToProps)(PurchaseHome);
+export const PurchaseContainer = connect(mapStateToProps, mapDispatchToProps)(withLocalize(PurchaseHome));
+
 export const WithAuthorisationCustomersContainer = Authorisation(connect(mapStateToProps, mapDispatchToProps)(PurchaseHome), 'example_of_allowed_string');
