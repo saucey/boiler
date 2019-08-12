@@ -115,7 +115,7 @@ const MySnackbarContentWrapper = (props) => {
     );
 }
 
-const BeginPasswordReset = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recoverPassword }) => {
+const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recoverPassword }) => {
     // console.log(recoverPassword('email'), 'the props is loading');
     const classes = useStyles({});
 
@@ -131,7 +131,7 @@ const BeginPasswordReset = ({ resetRecoverPasswordGuid, recoverPasswordGuid, rec
 
     return (
         <div>
-            <h1 className="heading"><span>Begin password reset</span></h1>
+            <h1 className="heading"><span>Create Password</span></h1>
             <ValidatorForm
                 onSubmit={() => recoverPassword(email)}
                 onError={errors => console.log(errors, 'errors')}>
@@ -167,12 +167,12 @@ const BeginPasswordReset = ({ resetRecoverPasswordGuid, recoverPasswordGuid, rec
                 <MySnackbarContentWrapper
                     onClose={() => resetRecoverPasswordGuid()}
                     variant="success"
-                    message="A reset password link will be sent your email address"
+                    message="A create password link will be sent your email address"
                 />
             </Snackbar>
         </div>
     );
 };
 
-export { BeginPasswordReset };
+export { CreatePassword };
 

@@ -3,7 +3,7 @@ import { IPageProps } from '../page-props'
 import "font-awesome/css/font-awesome.css";
 import { IClient, IAppUser, IPermitSearchModel, IPermit, IAppError, Purchase, IPurchase } from '../../models';
 import {
-    Permits, ResetPassword, BeginPasswordReset
+    Permits, ResetPassword, BeginPasswordReset, CreatePassword
 } from '../../components/management';
 
 import { withStyles, WithStyles } from '@material-ui/core/styles';
@@ -64,6 +64,7 @@ const setStepNumber = (stepName: string) => {
         case '/management/permits': return 0;
         case '/management/begin-password-reset': return 1;
         case '/management/reset-password': return 2;
+        case '/management/create-password': return 3;
     }
     return 0;
 }
@@ -121,6 +122,7 @@ export const Management = withStyles(styles)(class Management extends React.Comp
                         {this.state['step'] === 0 && <Permits permits={this.props.permits} permitEdit={this.permitEdit} />}
                         {this.state['step'] === 1 && <BeginPasswordReset resetRecoverPasswordGuid={this.props.resetRecoverPasswordGuid} recoverPasswordGuid={this.props.recoverPasswordGuid} recoverPassword={this.props.recoverPassword} />}
                         {this.state['step'] === 2 && <ResetPassword resetPasswordResetErrors={this.props.resetPasswordResetErrors} resetPasswordErrors={this.props.resetPasswordErrors} guid={this.state['guid']}  resetPassword={this.props.resetPassword} />}
+                        {this.state['step'] === 3 && <CreatePassword resetRecoverPasswordGuid={this.props.resetRecoverPasswordGuid} recoverPasswordGuid={this.props.recoverPasswordGuid} recoverPassword={this.props.recoverPassword} />}
                     </div>
                 );
             }} />

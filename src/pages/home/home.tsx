@@ -111,6 +111,7 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
             {this.props.user.userId === 0 && <React.Fragment>
               <div className="home-action-links">
                 <span><Link to={{ pathname: '/purchase/signIn', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>LOG IN</Link></span>
+                {this.props.client.clientId == 307 && <span><Link to={{ pathname: '/management/create-password', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>PAY FOR PERMIT</Link></span>}
                 {this.props.client.clientId !== 307 && <span><Link to={{ pathname: '/purchase/signUp', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>REGISTER</Link></span>}
               </div>
             </React.Fragment>}

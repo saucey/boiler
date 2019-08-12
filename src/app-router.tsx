@@ -49,6 +49,7 @@ export const AppRouter = withLocalize(class AppRouter extends React.Component {
 
                         <Route exact={true} path={'/management/permits'} component={ManagementContainer} />
                         <Route exact={true} path={'/management/begin-password-reset'} component={ManagementContainer} />
+                        <Route exact={true} path={'/management/create-password'} component={ManagementContainer} />
                         <Route exact={true} path={'/management/reset-password'} component={ManagementContainer} />
                         <Route exact={true} path={'/management/permit/:permitId'} component={PermitManagementContainer} />
 
