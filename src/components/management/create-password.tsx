@@ -157,7 +157,7 @@ const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recover
 
                 
 
-                {recoverPasswordGuid && <p className="resetMsg">A password reset link has been send to your designated e-mail address <br/>Select 'LOG IN' to return to the main 'LOG IN' screen</p>}
+                {recoverPasswordGuid && <p className="resetMsg">A password reset link has been sent to your designated e-mail address </p>}
 
             </ValidatorForm>
             <Snackbar
@@ -172,7 +172,7 @@ const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recover
                 <MySnackbarContentWrapper
                     onClose={() => resetRecoverPasswordGuid()}
                     variant="success"
-                    message="A password reset link has been send"
+                    message="A password reset link has been sent"
                 />
             </Snackbar>
         </div>

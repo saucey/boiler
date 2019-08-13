@@ -204,7 +204,7 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
               <h1 className="heading"><span>SEASON TICKETS</span></h1>
               <img className="home-ticket" src='/icons/ticket-svg.svg' style={{ height: 50, width: 50, display: 'block', margin: '0 auto' }} />
             </Link>}
-            {this.props.client.clientId === 307 && <CustomGrid></CustomGrid>}
+            {this.props.user.userId === 0 && this.props.client.clientId === 307 && <CustomGrid></CustomGrid>}
             {/* <VerticalSpacer15 /> */}
             {this.props.user.userId === 0 && <React.Fragment>
               <div className="home-action-links">
