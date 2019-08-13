@@ -11,8 +11,103 @@ import { createProductFrequenciesFromProductPrices } from '../../helpers/frequen
 // import { withLocalize } from 'react-localize-redux'
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { makeStyles } from '@material-ui/core/styles';
+
 
 const HomeWrapper = glamorous.div({ label: 'HomeWrapper', display: 'flex', flexDirection: 'column' });
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    margin: theme.spacing(2),
+    borderRadius: '0px',
+    textalign: 'left',
+    marginBottom: '100px'
+  },
+  paper: {
+    color: 'theme.palette.text.secondary',
+    borderRadius: '0px',
+    textAlign: 'left',
+    [theme.breakpoints.up('lg')]: {
+      height: '683px'
+    },
+    [theme.breakpoints.only('md')]: {
+      height: '821px'
+    }
+  },
+  paperContact: {
+  },
+  contactText: {
+    paddingBottom: '10px',
+  },
+  heading: {
+    backgroundColor: '#712177',
+    color: 'white',
+    padding: '20px',
+    fontSize: '2em',
+    fontWeight: 400,
+  },
+  heading2: {
+    backgroundColor: '#ff7914',
+    color: 'white',
+    padding: '20px',
+    fontSize: '2em',
+    fontWeight: 400,
+  }
+}));
+
+const CustomGrid = (props) => {
+  const classes = useStyles({});
+  // const { className, message, onClose, variant, ...other } = props;
+  // const Icon = variantIcon[variant];
+
+  return (
+    <div className={classes.root}>
+      <Grid container spacing={3} >
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.paper}>
+            <h1 className={classes.heading}>Exisiting Robert Gordon University (RGU) Student and Staff Permit Holders</h1>
+            <div className="gordon-intro">
+              <p>Have you already signed up and purchased a Student/Staff Car parking Permit for the new 2019/2020 academic year?</p>
+              <p>If yes, welcome to the RGU Cark Parking Permit Holders Portal.  This portal will enable you to log in and 'Manage Your Permit' for the 2019/2020 academic year</p>
+              <p>Both RGU Students and Staff (who are the primary user registered - including car share) will be able to manage their permits details including the following:</p>
+              <ul>
+                <li>Vehicle Registration Marks (VRM)</li>
+                <li>Payment Details (Students Only)</li>
+                <li>E-mail address</li>
+                <li>Change/Amend Car Share permit holders details </li>
+              </ul>
+              <p>In order to 'Manage Your Permit', 'Log In' to your account</p>
+              <span><Link to={{ pathname: '/purchase/signIn', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>LOG IN</Link></span>
+            </div>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Paper className={classes.paper}>
+            <h1 className={classes.heading2}>Non-Paid Robert Gordon University (RGU) Student and Staff Permit Holders</h1>
+            <div className="gordon-intro">
+              <p>Have you been successful in your application for a Student/Staff Car parking Permit for the new 2019/2020 academic year?</p>
+              <p>If yes, welcome to the RGU Cark Parking Permit Holders Portal.  This portal will enable you to:</p>
+              <ol>
+                <li>'Create a New Password'</li>
+                <li>'Pay for the Permit'</li>
+                <li>Once a new password has been set-up, 'log in' and 'Manage Your Permit' for the 2019/2020 academic year</li>
+              </ol>
+              <p>In order to pay for your permit, please select 'Pay For Permit' to continue with the payment process.</p>
+              <span><Link to={{ pathname: '/management/create-password', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>PAY FOR PERMIT</Link></span>
+            </div>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={12}>
+          <Paper className={classes.paperContact}>
+            <h1 className={classes.heading2}>Contact Us</h1>
+            <p className={classes.contactText}>If you have any problems or questions relating to the portal, please contact 'RGU@eurocarparks.com' in the first instance</p>
+          </Paper>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
 
 export interface IHomeProps extends IPageProps {
   client: IClient;
@@ -109,21 +204,11 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
               <h1 className="heading"><span>SEASON TICKETS</span></h1>
               <img className="home-ticket" src='/icons/ticket-svg.svg' style={{ height: 50, width: 50, display: 'block', margin: '0 auto' }} />
             </Link>}
-            <div>
-              <Grid container spacing={3}>
-                <Grid item xs={6}>
-                  <Paper>xs=6</Paper>
-                </Grid>
-                <Grid item xs={6}>
-                  <Paper>xs=6</Paper>
-                </Grid>
-              </Grid>
-            </div>
+            {this.props.client.clientId === 307 && <CustomGrid></CustomGrid>}
             {/* <VerticalSpacer15 /> */}
             {this.props.user.userId === 0 && <React.Fragment>
               <div className="home-action-links">
-                <span><Link to={{ pathname: '/purchase/signIn', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>LOG IN</Link></span>
-                {this.props.client.clientId == 307 && <span><Link to={{ pathname: '/management/create-password', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>PAY FOR PERMIT</Link></span>}
+                {this.props.client.clientId !== 307 && <span><Link to={{ pathname: '/purchase/signIn', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>LOG IN</Link></span>}
                 {this.props.client.clientId !== 307 && <span><Link to={{ pathname: '/purchase/signUp', state: { purchase: new Purchase(null, null), nextUrl: '/' } }}>REGISTER</Link></span>}
               </div>
             </React.Fragment>}

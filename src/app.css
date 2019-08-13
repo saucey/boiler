@@ -95,7 +95,7 @@ ul.city-list li {
   margin-top: -30px!important;
 }
 
-.home-action-links span a, .home-action-links a span {
+.home-action-links span a, .home-action-links a span, .gordon-intro span a {
   display: inline-block;
   border: 3px solid#ff7914;
   width: 300px;
@@ -105,6 +105,10 @@ ul.city-list li {
   font-family: 'Roboto';
   text-transform: uppercase;
   color: black;
+}
+
+.gordon-intro span a {
+  text-align: center;
 }
 
 ul.footer-flow {
@@ -357,4 +361,17 @@ ul.footer-flow li a span {
   color: #15c115;
   margin-top: 20px;
 
+}
+
+.gordon-intro ul, .gordon-intro ol  {
+  color: #ff7914; 
+  font-size: 1.2em;
+}
+
+.gordon-intro ul li, .gordon-intro ol li {
+  margin-bottom: 15px;
+}
+
+.gordon-intro {
+  padding: 20px;
 }
