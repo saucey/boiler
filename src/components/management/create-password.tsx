@@ -8,6 +8,7 @@ import SnackbarContent from '@material-ui/core/SnackbarContent';
 import IconButton from '@material-ui/core/IconButton';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import clsx from 'clsx';
+// import {useLocation} from 'react-use';
 
 const variantIcon = {
     success: CheckCircleIcon
@@ -118,12 +119,13 @@ const MySnackbarContentWrapper = (props) => {
 const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recoverPassword }) => {
     // console.log(recoverPassword('email'), 'the props is loading');
     const classes = useStyles({});
-
+    // const location = useLocation();
     const [email, setEmail] = useState('');
     const [open, setOpen] = React.useState(false);
     // const prevCountRef = useRef();
 
     // const routeResult = useRoutes(routes);
+    // console.log(location)
 
     useEffect(() => {
         setOpen(recoverPasswordGuid)
@@ -131,6 +133,7 @@ const CreatePassword = ({ resetRecoverPasswordGuid, recoverPasswordGuid, recover
 
     return (
         <div>
+            {/* {console.log(location, 'location')} */}
             <h1 className="heading"><span>Create a New Password</span></h1>
             <p>Please enter the e-mail address supplied as part of the permit application details</p>
             <ValidatorForm

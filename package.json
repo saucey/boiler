@@ -81,6 +81,7 @@
     "react-stripe-elements": "^2.0.3",
     "react-table": "^6.9.2",
     "react-transition-group": "^2.5.3",
+    "react-use": "^10.5.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
     "redux-localstorage-simple": "^2.1.6",
