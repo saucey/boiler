@@ -8,7 +8,6 @@ import { newUser, ISiteLocationSearchModel, IPurchase, IProductSearchModel } fro
 // import { withLocalize } from 'react-localize-redux';
 
 const mapStateToProps = (state: IAppState) => {
-    console.log(state, 'the state on the HOMe')
     return {
         client: state.appContainer.client,
         isProcessing: false,

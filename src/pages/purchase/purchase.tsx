@@ -440,9 +440,6 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         const { step, isDesktop, purchase } = this.state;
         const appUser = user();
 
-        console.log(this.props, 'whats this')
-
-
         const userCustomer = this.props.user.customer !== null ? this.props.user.customer : null
 
         return (
