@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom'
 import Measure from 'react-measure';
 import { createProductFrequenciesFromProductPrices } from '../../helpers/frequency';
 // import { withLocalize } from 'react-localize-redux'
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 const HomeWrapper = glamorous.div({ label: 'HomeWrapper', display: 'flex', flexDirection: 'column' });
 
@@ -51,7 +53,7 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
       }]
 
       const preProduct = { startDate: this.props.preProduct.startDate, VRMs: vrms, spaces: this.props.preProduct.spaces, productId: this.props.product.permitProductId, productName: this.props.product.permitProductName, maxVRMs: this.props.product.maxVRMs, activeVRMs: 1, frequency: createProductFrequenciesFromProductPrices(this.props.product.prices.find(x => x.isCurrent))[0] };
-      this.props.history.push({ pathname: "/purchase/summary", state: { purchase: new Purchase(this.props.user['user'].customer, null, preProduct) } });
+      this.props.history.push({ pathname: "/purchase/summary", state: { purchase: new Purchase(this.props.user.customer, null, preProduct) } });
     }
 
     // this.props.fetchSites(this.newSiteSearchModel(this.props.towns), new Purchase(this.props.user['user'].customer, this.props.towns));
@@ -88,7 +90,7 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
   stateToPath(pathToRoute): any {
     switch (Object.keys(pathToRoute).length) {
       case 1:
-        return { purchase: new Purchase(this.props.user.customer !== null ? this.props.user['user'].customer : null, this.props.towns[0]) };
+        return { purchase: new Purchase(this.props.user.customer !== null ? this.props.user.customer : null, this.props.towns[0]) };
       default:
         return { purchase: new Purchase(this.props.user.customer, null) };
     }
@@ -103,10 +105,20 @@ export class Home extends React.Component<IHomeProps, IHomeState>{
           <HomeWrapper>
             {/* <VerticalSpacer15 /> */}
             {/* <Link to={{pathname: '/purchase/intro', state: {purchase: this.props.user.customer}}} style={{ margin: '0 auto' }}></Link> */}
-            <Link to={{ pathname: Object.keys(this.props.towns).length === 1 ? '/purchase/product' : '/purchase/intro', state: this.stateToPath(this.props.towns) }} style={{ margin: '0 auto' }}>
+            {this.props.client.clientId !== 307 && <Link to={{ pathname: Object.keys(this.props.towns).length === 1 ? '/purchase/product' : '/purchase/intro', state: this.stateToPath(this.props.towns) }} style={{ margin: '0 auto' }}>
               <h1 className="heading"><span>SEASON TICKETS</span></h1>
               <img className="home-ticket" src='/icons/ticket-svg.svg' style={{ height: 50, width: 50, display: 'block', margin: '0 auto' }} />
-            </Link>
+            </Link>}
+            <div>
+              <Grid container spacing={3}>
+                <Grid item xs={6}>
+                  <Paper>xs=6</Paper>
+                </Grid>
+                <Grid item xs={6}>
+                  <Paper>xs=6</Paper>
+                </Grid>
+              </Grid>
+            </div>
             {/* <VerticalSpacer15 /> */}
             {this.props.user.userId === 0 && <React.Fragment>
               <div className="home-action-links">

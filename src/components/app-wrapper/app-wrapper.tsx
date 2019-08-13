@@ -34,8 +34,6 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
       isOpen: this.props.isOpen,
       urlLocation: window.location.pathname
     };
-
-    console.log(window.location, 'pathname')
   }
 
   render() {

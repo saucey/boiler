@@ -98,7 +98,7 @@ export const Management = withStyles(styles)(class Management extends React.Comp
         if (this.state['step'] === 0) {
             const searchModel: IPermitSearchModel = {
                 searchText: '',
-                customerId: this.props.user['user'].customer !== null ? this.props.user['user'].customer.customerId : null,
+                customerId: this.props.user.customer !== null ? this.props.user.customer.customerId : null,
                 clientId: this.props.client.clientId || null,
             }
             this.props.fetchPermits(searchModel);

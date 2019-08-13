@@ -92,10 +92,6 @@ const MySnackbarContentWrapper = (props) => {
     );
 }
 
-
-
-
-
 const CssTextField = withStyles({
     root: {
         width: '100%',

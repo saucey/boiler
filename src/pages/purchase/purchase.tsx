@@ -439,7 +439,11 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         const { products, isProcessing, towns, sites, productFrequencies, product, permit, town } = this.props;
         const { step, isDesktop, purchase } = this.state;
         const appUser = user();
-        const userCustomer = this.props.user.customer !== null ? this.props.user['user'].customer : null
+
+        console.log(this.props, 'whats this')
+
+
+        const userCustomer = this.props.user.customer !== null ? this.props.user.customer : null
 
         return (
             <AppContainer title='Purchase Permit' isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}

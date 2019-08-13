@@ -12,7 +12,6 @@ import { Authorisation } from '../../components/higher-order-components/authoris
 import { withLocalize } from "react-localize-redux";
 
 const mapStateToProps = (state: IAppState) => {
-
     return {
         user: state.appContainer.user ? state.appContainer.user : newUser,
         client: state.appContainer.client,

@@ -83,7 +83,7 @@ export const logIn = (userAuth: { userName: string, password: string }): IAppAct
 
 export const loginSuccess = (user: IAppUser): IAppAction => ({
     type: appContainerStateActions. LOG_IN_SUCCESS,
-    payload: {user}
+    payload: user
 });
 
 export const fetchCustomerProduct = (customerId: number): IAppAction => ({
