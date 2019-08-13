@@ -66,7 +66,7 @@ const CustomGrid = (props) => {
       <Grid container spacing={3} >
         <Grid item xs={12} md={6}>
           <Paper className={classes.paper}>
-            <h1 className={classes.heading}>Exisiting Robert Gordon University (RGU) Student and Staff Permit Holders</h1>
+            <h1 className={classes.heading}>Exisiting Student and Staff Permit Holders</h1>
             <div className="gordon-intro">
               <p>Have you already signed up and purchased a Student/Staff Car parking Permit for the new 2019/2020 academic year?</p>
               <p>If yes, welcome to the RGU Cark Parking Permit Holders Portal.  This portal will enable you to log in and 'Manage Your Permit' for the 2019/2020 academic year</p>
@@ -84,7 +84,7 @@ const CustomGrid = (props) => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Paper className={classes.paper}>
-            <h1 className={classes.heading2}>Non-Paid Robert Gordon University (RGU) Student and Staff Permit Holders</h1>
+            <h1 className={classes.heading2}>Non-Paid Student and Staff Permit Holders</h1>
             <div className="gordon-intro">
               <p>Have you been successful in your application for a Student/Staff Car parking Permit for the new 2019/2020 academic year?</p>
               <p>If yes, welcome to the RGU Cark Parking Permit Holders Portal.  This portal will enable you to:</p>
