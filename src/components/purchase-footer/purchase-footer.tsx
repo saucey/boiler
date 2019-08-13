@@ -44,7 +44,7 @@ export class PurchaseFooter extends React.Component<IPurchaseFooterProps, IPurch
       <div ref={innerREf} className="footer" id="footer">
         {((step > 1 && step < 9 && client.clientId !== 447) || (step > 3 && step < 9 && client.clientId === 447))
           && (!this.state.dimensions || (this.state.dimensions && this.state.dimensions.height < 90))
-          && <span className="title">Click on any step to reselect your choice:</span>}
+          && <span className="title">{preProduct ? '' : 'Click on any step to reselect your choice' }</span>}
 
         <Measure bounds onResize={contentRect => { this.setState({ dimensions: contentRect.bounds }) }}>
           {({ measureRef }) => (
