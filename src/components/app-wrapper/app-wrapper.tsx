@@ -4,7 +4,7 @@ import { injectIntl, InjectedIntlProps } from 'react-intl';
 import { getLogo } from '../../helpers/logo';
 import { LoadSpinner } from '../load-spinner';
 import { Link } from 'react-router-dom'
-import { IAppUser } from '../../models';
+import { IAppUser, IClient } from '../../models';
 
 export interface IAppContainerProps {
   user: IAppUser | null;
@@ -19,7 +19,9 @@ export interface IAppContainerProps {
   renderFooter(): JSX.Element;
   onHomeClick(): void;
   logout(): void;
+  setLanguage(lang: string): void;
   intl: any;
+  client: IClient;
 }
 
 export interface IAppContainerState {
@@ -67,6 +69,11 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
     this.setState({ isOpen: false });
     this.props.onToggleSideMenu(false);
   };
+
+  setLanguage(currentLang) {
+    currentLang = currentLang === 'en' ? 'cy' : 'en'
+    this.props.setLanguage(currentLang);
+  }
 
   setActionLink(url) {
     // User is logged in
@@ -117,8 +124,15 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
                 isPurchase && <Link to="/">CANCEL</Link>
               }
             </div>
-            <div className="logo-btn-wrapper"><img className="logo" width="100px" src={getLogo()} />
+            <div className="logo-btn-wrapper">
+              <img className="logo" width="100px" src={getLogo()} />
+              {this.props.client.clientId === 447 &&
+              <div className="language-flag-wrapper" onClick={() => this.setLanguage(intl.locale)}>
+                <span className={`${intl.locale} language-flag`}></span>
+              </div>}
+
             </div>
+
           </div>
           <div>
             {render(intl)}

@@ -36,7 +36,7 @@ html, body {
 
 .logo {
   width: 317px;
-  display: block;
+  display: inline-block;
 }
 
 .logo-btn-wrapper {
@@ -44,6 +44,7 @@ html, body {
   padding: 21px 0 22px 40px;
   margin-bottom: 50px;
   border-bottom: 1px solid #ccc;
+  text-align: left;
 }
 
 .cancel-btn-wrapper {
@@ -375,4 +376,31 @@ ul.footer-flow li a span {
 
 .gordon-intro {
   padding: 20px;
+}
+
+.language-flag-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.language-flag {
+  display: block;
+  height: 59px;
+  width: 98px;
+  border: 2px solid #712177;
+  cursor: pointer;
+  /* border: 1px solid red; */
+  background-position: -1px -1px;
+  background-image: url('flags.jpg');
+  background-repeat: no-repeat;
+  background-size: 198px auto;
+  margin-left: 20px;
+}
+
+.cy {
+  background-position: -101px -1px;
+}
+
+.en {
+  background-position: -1px -1px;
 }

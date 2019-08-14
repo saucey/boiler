@@ -9,6 +9,7 @@ import { IPermitNewState } from './permit-new-state'
 import { ILocationState } from './location-state';
 import { IDimensionsState } from './dimensions-state';
 import { IPaymentState } from './payment-state';
+import { ILanguageLocaleState } from './language-locale-state';
 
 export interface IAppState {
   appContainer: IAppContainerState;
@@ -20,4 +21,5 @@ export interface IAppState {
   locationContainer: ILocationState;
   dimensionsContainer: IDimensionsState;
   paymentContainer: IPaymentState;
+  languageLocaleContainer: ILanguageLocaleState;
 }

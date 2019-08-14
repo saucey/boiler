@@ -8,11 +8,12 @@ import permitNewReducer from './permit-new-reducer'
 import locationReducer from './location-reducer';
 import dimensionsReducer from './dimensions-reducer';
 import paymentReducer from './payment-reducer';
+import languageLocaleReducer from './language-locale-reducer';
 
 export const reducers = {
     appContainer:appContainerReducer, referenceData:referenceDataReducer, 
     purchaseContainer: purchaseReducer,
     paymentContainer: paymentReducer,
     permitsContainer:permitsReducer, permitContainer:permitReducer, permitNewContainer: permitNewReducer,
-    locationContainer:locationReducer, dimensionsContainer: dimensionsReducer
+    locationContainer:locationReducer, dimensionsContainer: dimensionsReducer, languageLocaleContainer: languageLocaleReducer
 };

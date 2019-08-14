@@ -445,7 +445,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         return (
             <AppContainer title='Purchase Permit' isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}
                 render={(intl) => {
-                    console.log(intl, 'the internation language')
+                    console.log(intl, 'intl')
                     return <Flipper flipKey={step === 1 || step === 2}><HomeWrapper>
                         {step === 0 && <React.Fragment>
                             <h1 className="heading">{this.heading('SEASON TICKETS')}</h1>

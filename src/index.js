@@ -1,22 +1,13 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import App from './app';
+import AppContainer from './app-container';
 import './index.css';
 import { store } from './store';
 import { bootstrap } from './bootstrap';
 import * as serviceWorker from './serviceWorker';
-import { addLocaleData } from "react-intl";
-import locale_en from 'react-intl/locale-data/en';
-import locale_cy from 'react-intl/locale-data/cy';
-import { IntlProvider } from "react-intl";
-import translationData from './translations/data.json';
 import 'bootstrap/dist/css/bootstrap.css';
 import authentication from 'react-azure-adb2c';
-
-addLocaleData([...locale_en, ...locale_cy]);
-const language = (navigator.languages && navigator.languages[0]) || navigator.language || navigator['userLanguage'];
-const languageWithoutRegionCode = language.toLowerCase().split(/[_-]+/)[0];
-const messages = translationData[languageWithoutRegionCode] || translationData[language] || translationData.en;
+import { Provider } from 'react-redux';
 
 authentication.initialize({
     // optional, will default to this
@@ -39,14 +30,12 @@ authentication.initialize({
     postLogoutRedirectUri: 'http://myapp.com'
 });
 
-console.log(store.getState(), 'the store')
-
 bootstrap.init(store.dispatch)
     .then(() => {
         ReactDOM.render(
-            <IntlProvider locale={languageWithoutRegionCode} messages={messages}>
-                <App store={store} />
-            </IntlProvider>
+            <Provider store={store}>
+                <AppContainer />
+            </Provider>
             , document.getElementById('root'))
         //as HTMLElement); //as HTMLElement);
     });

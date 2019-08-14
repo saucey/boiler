@@ -38,11 +38,6 @@ export const insertCardChargeSuccess = (charge: IPayment): IAppAction => ({
     payload: charge
 });
 
-// export const insertCardChargeError = (appError: IAppError): IAppAction => ({
-//     type: paymentDataStateActions.INSERT_CARD_CHARGE_ERROR,
-//     payload: appError
-// });
-
 export const insertDirectDebitCustomer = (customer): IAppAction => ({
     type: paymentDataStateActions.INSERT_DIRECT_DEBIT_CUSTOMER,
     payload: customer

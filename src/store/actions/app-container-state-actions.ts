@@ -91,7 +91,6 @@ export const fetchCustomerProduct = (customerId: number): IAppAction => ({
     payload: {customerId}
 });
 
-
 export const loginError = (appError: IAppError): IAppAction => ({
     type: appContainerStateActions.LOG_IN_ERROR,
     payload: appError
