@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import clsx from 'clsx';
 // import {useLocation} from 'react-use';
-
 const variantIcon = {
     success: CheckCircleIcon
 };

@@ -8,16 +8,11 @@ export const endPointKeys: IEndPointKeys = appConfig.endPoints;
 
 const config = (apiEndPoint: string, url: string, data?: any) => {
   const currentUser: any = user();
-  let token = ''
-
-  if (currentUser.user) {
-    token = currentUser.user['token']
-  }
   
   return {
     url: apiEndPoint + '/' + url,
     headers: {
-      'Authorization': 'Bearer ' + /*currentUser.token ||*/ token,
+      'Authorization': 'Bearer ' + currentUser.token,
       'Content-Type': 'application/json',
       'Accept': 'application/json'
     },

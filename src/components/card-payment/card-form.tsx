@@ -84,6 +84,7 @@ export class _CardForm extends React.Component<ICardFormProps> {
         id: this.state['source'],
         client_secret: this.state['client_secret'],
       }).then((result) => {
+        console.log(result, 'the result')
         if (result.source.status === 'chargeable') {
           this.props.pendingCardPayment(true);
           this.props.makePayment(this.props.payment.paymentStore, this.props.payment.paymentStore.customerId);

@@ -16,9 +16,12 @@ export const insertCardChargeEpic = (action$: ActionsObservable<IAppAction>, sta
             const payment = payload.charge;
             const customerId = payload.customerId;
             let p = JSON.stringify(payment);
+
             return api.post(endPointKeys.base, `Payment/Stripe/${customerId}`, p).pipe(
                 map(res => res.data),
-                map((payment: IPayment) => insertCardChargeSuccess(payment)),
+                map((payment: IPayment) => {
+                    return insertCardChargeSuccess(payment)
+                }),
                 catchError(error => {
                     const appError: IAppError = { error, message: 'Unable to make payment' };
                     return of(insertCardChargeError(appError));
