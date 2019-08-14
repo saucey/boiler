@@ -15,10 +15,11 @@ export interface IAppContainerProps {
   footerHeight: number;
   isPurchase: boolean;
   onToggleSideMenu(boolean): void;
-  render(): JSX.Element;
+  render(intl): JSX.Element;
   renderFooter(): JSX.Element;
   onHomeClick(): void;
   logout(): void;
+  intl: any;
 }
 
 export interface IAppContainerState {
@@ -34,14 +35,15 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
       isOpen: this.props.isOpen,
       urlLocation: window.location.pathname
     };
+
   }
 
   render() {
-    const { title, render, isHome, isPurchase, renderFooter, onHomeClick } = this.props;
+    const { title, render, isHome, isPurchase, renderFooter, onHomeClick, intl } = this.props;
     const isReady = this.props.isReady;
     return (
       <React.Fragment>
-        {isReady ? this.renderApp({ title, isReady, isHome, isPurchase, render, renderFooter, onHomeClick }) : <LoadSpinner />}
+        {isReady ? this.renderApp({ title, isReady, isHome, isPurchase, render, renderFooter, onHomeClick, intl }) : <LoadSpinner />}
       </React.Fragment>
     );
   };
@@ -83,7 +85,7 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
         )
       }
     } else {
-      if(url === '/management/begin-password-reset' || url === '/management/create-password' || url === '/management/reset-password') {
+      if (url === '/management/begin-password-reset' || url === '/management/create-password' || url === '/management/reset-password') {
         return (
           <Link to="/">CANCEL</Link>
         )
@@ -92,14 +94,15 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
     return '';
   }
 
-  renderApp = ({ title, isReady, isHome, isPurchase, render, renderFooter, onHomeClick }: {
+  renderApp = ({ title, isReady, isHome, isPurchase, render, renderFooter, intl, onHomeClick }: {
     title: string,
     isReady: boolean,
     isHome?: boolean,
     isPurchase: boolean,
-    render(): JSX.Element,
+    intl: any,
+    render(intl): JSX.Element,
     renderFooter(): JSX.Element,
-    onHomeClick(): void
+    onHomeClick(): void,
   }) => {
     return [
       (
@@ -114,10 +117,11 @@ export const AppWrapper = injectIntl((class extends React.Component<IAppContaine
                 isPurchase && <Link to="/">CANCEL</Link>
               }
             </div>
-            <div className="logo-btn-wrapper"><img className="logo" width="100px" src={getLogo()} /></div>
+            <div className="logo-btn-wrapper"><img className="logo" width="100px" src={getLogo()} />
+            </div>
           </div>
           <div>
-            {render()}
+            {render(intl)}
           </div>
           {renderFooter()}
         </div>

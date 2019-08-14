@@ -39,10 +39,12 @@ authentication.initialize({
     postLogoutRedirectUri: 'http://myapp.com'
 });
 
+console.log(store.getState(), 'the store')
+
 bootstrap.init(store.dispatch)
     .then(() => {
         ReactDOM.render(
-            <IntlProvider locale={'es'} messages={messages}>
+            <IntlProvider locale={languageWithoutRegionCode} messages={messages}>
                 <App store={store} />
             </IntlProvider>
             , document.getElementById('root'))
