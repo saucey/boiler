@@ -78,39 +78,6 @@ export class SignUp extends React.Component<ISignUpProps, ISignUpState> {
     constructor(props: ISignUpProps) {
         super(props);
         this.state = { customerForm: new CustomerAddForm, errors: {} };
-
-        const payloadNew = {
-            customerId: 0,
-            firstName: 'Leo2',
-            lastName: 'Scott2',
-            customerName: 'Leo The Customer',
-            company: 'Roberty Gordon University',
-            client: {
-                'clientId': 307,
-                'clientName': "string",
-                'shouldShowSites': true
-            },
-            addressLine1: '43 harold road',
-            addressLine2: 'crystal palace',
-            town: 'London',
-            county: 'Greater London',
-            postcode: 'SE193PL',
-            country: {
-                'countryId': 0,
-                'countryName': "string"
-            },
-            userId: 0,
-            phoneNumber: '07492065784',
-            emailAddress: 'leo@designanddev14.com',
-            password: 'password123',
-            notes: 'N/A',
-            createdBy: 0,
-            createdDate: new Date(),
-            updatedBy: 0,
-            updatedDate: new Date()
-        }
-
-        this.props.reg(payloadNew);
     }
 
     onChange(changedState: any) {
