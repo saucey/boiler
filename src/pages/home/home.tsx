@@ -229,7 +229,7 @@ export class Home extends React.Component<IHomeProps, IHomeState> {
     }
 
     // this.props.fetchSites(this.newSiteSearchModel(this.props.towns), new Purchase(this.props.user['user'].customer, this.props.towns));
-    if (this.props.towns !== prevProps.towns) {
+    if (this.props.towns !== prevProps.towns && this.props.towns[0] !== undefined) {
       this.props.fetchSites(
         this.newSiteSearchModel(this.props.towns[0].town),
         new Purchase(this.props.user.customer, this.props.towns[0])
@@ -262,7 +262,7 @@ export class Home extends React.Component<IHomeProps, IHomeState> {
     );
   }
 
-  changeTab = (event, value) => {};
+  changeTab = (event, value) => { };
 
   newSiteSearchModel(town): ISiteLocationSearchModel {
     return {

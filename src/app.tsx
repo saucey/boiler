@@ -1,13 +1,15 @@
 import * as React from 'react';
 // import { Provider } from 'react-redux';
 import { AppRouter } from './app-router';
-import './app.css';
+import './app.scss';
 
 import { addLocaleData } from "react-intl";
 import locale_en from 'react-intl/locale-data/en';
 import locale_cy from 'react-intl/locale-data/cy';
 import { IntlProvider } from "react-intl";
 import translationData from './translations/data.json';
+// import { ThemeProvider } from 'styled-components';
+// const theme = require('sass-extract-loader?{"plugins": ["sass-extract-js"]}!./vars.scss');
 // import { IAppState } from './store/state';
 
 addLocaleData([...locale_en, ...locale_cy]);
@@ -42,9 +44,9 @@ export class App extends React.Component<IAppProps, IAppState>{
     }
 
     componentDidUpdate(prevProps) {
-        if(this.props.language !== prevProps.language && this.props.languageHasToggled) {
-            this.setState({languageSet: this.props.language})
-            this.setState({message: translationData[this.props.language]})
+        if (this.props.language !== prevProps.language && this.props.languageHasToggled) {
+            this.setState({ languageSet: this.props.language })
+            this.setState({ message: translationData[this.props.language] })
         }
     }
 
@@ -53,7 +55,9 @@ export class App extends React.Component<IAppProps, IAppState>{
         return (
             <div className="dynamicCLass">
                 <IntlProvider locale={this.state.languageSet} messages={this.state.message} defaultLocale={this.props.defaultLanguage}>
-                    <AppRouter />
+                    {/* <ThemeProvider> */}
+                        <AppRouter />
+                    {/* </ThemeProvider> */}
                 </IntlProvider>
             </div>
         )

@@ -13,6 +13,7 @@
 .App-header {  background-color: #222;  height: 80px;  padding: 20px;  color: white;}
 .App-intro {  font-size: large;} */
 
+
 html, body {
   height: 100%;
 }
@@ -280,21 +281,20 @@ ul.footer-flow li a span {
   width: 360px;
   margin: 0 auto;
   text-align: left;
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 }
-
-.vrm-item-wrapper::after {
-  content: "";
-  clear: both;
-  display: table;
+.vrm-item-wrapper {
+  span {
+    margin-right: 10px;
+  }
+  .error-text {
+    display: inline-block;
+  }
 }
-.vrm-item-wrapper span {
-  margin-right: 10px;
-}
-
-.vrm-item-wrapper .error-text {
-  display: inline-block;
-}
-
 
 
 .calendar-btn-wrapper {
@@ -344,11 +344,11 @@ ul.footer-flow li a span {
 
 .editBtn.MuiButton-containedSecondary {
   background-color: #47d447;
+  &:hover {
+    background-color: #40af40;
+  }
 }
 
-.editBtn.MuiButton-containedSecondary:hover {
-  background-color: #40af40;
-}
 
 .footer-flow.pre-product-list li {
   border: 1px solid #dddddd;
@@ -381,26 +381,26 @@ ul.footer-flow li a span {
 .language-flag-wrapper {
   display: inline-block;
   vertical-align: top;
+  .language-flag {
+    display: block;
+    height: 59px;
+    width: 98px;
+    border: 2px solid #712177;
+    cursor: pointer;
+    /* border: 1px solid red; */
+    background-position: -1px -1px;
+    background-image: url('flags.jpg');
+    background-repeat: no-repeat;
+    background-size: 198px auto;
+    margin-left: 20px;
+    &.cy {
+      background-position: -101px -1px;
+    }
+    
+    &.en {
+      background-position: -1px -1px;
+    }
+  }
 }
 
-.language-flag {
-  display: block;
-  height: 59px;
-  width: 98px;
-  border: 2px solid #712177;
-  cursor: pointer;
-  /* border: 1px solid red; */
-  background-position: -1px -1px;
-  background-image: url('flags.jpg');
-  background-repeat: no-repeat;
-  background-size: 198px auto;
-  margin-left: 20px;
-}
 
-.cy {
-  background-position: -101px -1px;
-}
-
-.en {
-  background-position: -1px -1px;
-}

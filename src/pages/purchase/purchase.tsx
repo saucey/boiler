@@ -29,6 +29,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { /*faMapMarkerAlt, faParking, faReceipt, faCarAlt, faCalendarCheck*/
     faSpinner
 } from '@fortawesome/free-solid-svg-icons'
+// import styled from 'styled-components';
+
+// const NewButton = styled.button`
+//   border:   ${props => props.client['clientId'] === 307 ? '1px solid red' : '1px solid green'};
+//   cursor : pointer;
+//   display: inline-block;
+//   font-weight: bold;
+//   padding: 16px 25px 17px;
+//   position: relative;
+//   text-align: center;
+//   color: white;
+//   background-color: red;
+  
+//   &:hover { text-decoration: underline; color: green }
+  
+// `;
 
 // import { renderToStaticMarkup } from "react-dom/server";
 // import globalTranslations from "../../translations/global.json";
@@ -129,6 +145,19 @@ export interface IPurchaseState {
     payingDeposit: boolean;
     townSet: boolean;
 }
+
+// const NewButton = styled.button`
+//   border:   ${props => console.log(props, 'the styles in styled comp') };
+//   cursor : pointer;
+//   display: inline-block;
+//   font-weight: bold;
+//   padding: 16px 25px 17px;
+//   position: relative;
+//   text-align: center;
+//   color: white;
+//   background-color: red;
+//   &:hover { text-decoration: underline; color: green }
+// `;
 
 const isPayingDeposit = (clientId: number) => {
 
@@ -445,7 +474,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
         return (
             <AppContainer title='Purchase Permit' isPurchase={true && step !== 0} renderFooter={() => { return isDesktop && this.thePurchaseFooter() }}
                 render={(intl) => {
-                    console.log(intl, 'intl')
+                    // console.log(intl, 'intl')
                     return <Flipper flipKey={step === 1 || step === 2}><HomeWrapper>
                         {step === 0 && <React.Fragment>
                             <h1 className="heading">{this.heading('SEASON TICKETS')}</h1>
@@ -535,6 +564,7 @@ export class PurchaseHome extends React.Component<IPurchaseProps & RouteComponen
                         </React.Fragment>}
                         {step === 13 && <React.Fragment>
                             <h1 className="heading">{this.heading('Login')}</h1>
+                            {/* <NewButton client={this.props.client.clientId}>style component</NewButton> */}
                             {/* <button> */}
                             {/* <Translate id="movie.title"></Translate> */}
                             {/* </button> */}
