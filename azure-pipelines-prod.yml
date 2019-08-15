@@ -1,8 +1,7 @@
 name: $(SourceBranchName)_$(date:yyyyMMdd)$(rev:.r)
 
 trigger:
-- develop
-- feature/*
+- master
 
 pool:
   vmImage: 'vs2017-win2016'
@@ -11,7 +10,7 @@ steps:
 - script: npm install
   displayName: 'npm install'
 
-- script: yarn build-staging
+- script: yarn build-production
   displayName: 'yarn build'
 
 - task: ArchiveFiles@2
